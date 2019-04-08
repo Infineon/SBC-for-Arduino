@@ -36,5 +36,6 @@ A more detailled description can be found in the [User Manual](https://github.co
 
 ## Thermal Behaviour
 The picture shows the shield with an external load of 2.5 amps. The power mosfets on the board heat up to approx. 60 degrees at ambient temperature.
+
 ![alt text](https://github.com/Infineon/SBC-for-Arduino/blob/master/ReadMe%20Documents/thermal_2_5_amps.jpg?raw=true "Thermal Behaviour Switched Power 2.5 Amps")
 
