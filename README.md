@@ -11,7 +11,7 @@ Also implemented are a configurable timeout / window watchdog circuit with a res
 The device offers low-power modes in order to minimize current consumption on applications that are connected permanently to the battery. 
 A wake-up from the low-power mode is possible via a message on the buses, via the bi-level sensitive monitoring/wake-up input as well as via cyclic wake.
 
-##Key Features of the shield
+## Key Features of the shield
 * Supply voltage range 9 to 12 V
 * 9 WS2812B LEDs powered by the integrated buck converter of the Lite SBC
 * Microchip MCP2515 SPI-CAN protocol handler for CAN communication
@@ -21,9 +21,16 @@ A wake-up from the low-power mode is possible via a message on the buses, via th
 * Switchable SBC test mode and Arduino reset
 
 ## Application diagram
-![alt text](https://github.com/Infineon/SBC-for-Arduino/blob/master/ReadMe%20Documents/overview.png?raw=true "Block Diagram Arduino Shield Lite SBC")
-The WK input has a ESD protection and also a passive pull-down. The easiest way to connect a switch is a switchable connection to the positive input supply rail. The SW output can drive directly a connected load.
-The load must be externally connected to GND.
+The WK input has a ESD protection and also a passive pull-down. The easiest way to connect a switch is a switchable connection to the positive input supply rail. But also any signal with a logic high level of over 4 volts can be applied here. 
+The SW output can drive directly a connected load (e.g. light-bulbs, small motors, etc). The load must be externally connected to GND. The GNDs of the other CAN communication nodes and the GND of the shield should be connected together.
+
+<img src="https://github.com/Infineon/SBC-for-Arduino/blob/master/ReadMe%20Documents/overview.png?raw=true" width=600>
+
+## Arduino Code Examples
+Two code examples for the shield are offered
+* CAN-PN demonstration
+* General code example to demonstrate CAN communication, Control of LEDs, SW output and the WK input
+A more detailled description can be found in the [User Manual](https://github.com/Infineon/SBC-for-Arduino/raw/master/LiteSBC_Arduino_Shield_UserManual.pdf)
 
 ## Thermal Behaviour
 ![alt text](https://github.com/Infineon/SBC-for-Arduino/blob/master/ReadMe%20Documents/thermal_2_5_amps.jpg?raw=true "Thermal Behaviour Switched Power 2.5 Amps")
