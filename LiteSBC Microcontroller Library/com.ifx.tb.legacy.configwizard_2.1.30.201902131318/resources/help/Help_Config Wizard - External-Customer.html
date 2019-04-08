@@ -1,0 +1,1248 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0099)https://confluencewikiprod.intra.infineon.com/plugins/viewsource/viewpagesrc.action -->
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+         <TITLE>Quelle anzeigen</TITLE>         
+<META http-equiv="Content-Type" content="text/html; charset=utf-8"><LINK href="/pages/viewpage.action?pageId=$action.page.id" 
+rel="canonical">         
+<SCRIPT>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\u0022\u0022";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</SCRIPT>
+ <LINK href="Help_Config%20Wizard%20-%20External-Customer_files/batchADY1O487.css" 
+rel="stylesheet" type="text/css" media="all" data-wrm-batch-type="context" 
+data-wrm-key="_super"> <!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/e8b0672d65aaec33039ba19da12f9eae-CDN/de_DE/7502/03f55dd28656fecb49cdf79d0ae052058a20a5d2/1afc6cfa7ea446facd928de92ded734d/_/download/contextbatch/css/_super/batch.css?conditionalComment=lt+IE+9" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<![endif]--> <!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/e8b0672d65aaec33039ba19da12f9eae-CDN/de_DE/7502/03f55dd28656fecb49cdf79d0ae052058a20a5d2/1afc6cfa7ea446facd928de92ded734d/_/download/contextbatch/css/_super/batch.css?conditionalComment=lte+IE+9" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<![endif]--> 
+<LINK href="Help_Config%20Wizard%20-%20External-Customer_files/batchLDSEZZD8.css" 
+rel="stylesheet" type="text/css" media="all" data-wrm-batch-type="context" 
+data-wrm-key="plugin.viewsource,-_super"> <LINK href="Help_Config%20Wizard%20-%20External-Customer_files/batch7LD19O05.css" 
+rel="stylesheet" type="text/css" media="all" data-wrm-batch-type="context" 
+data-wrm-key="page,-_super"> <LINK href="Help_Config%20Wizard%20-%20External-Customer_files/batchY719L4YO.css" 
+rel="stylesheet" type="text/css" media="print" data-wrm-batch-type="context" 
+data-wrm-key="page,-_super"> <LINK href="Help_Config%20Wizard%20-%20External-Customer_files/batchN5OQQLSP.css" 
+rel="stylesheet" type="text/css" media="all" data-wrm-batch-type="context" 
+data-wrm-key="editor-content,-_super"> <!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/s/cae6eee97fb6901f65a9a15fea24c356-CDN/de_DE/7502/03f55dd28656fecb49cdf79d0ae052058a20a5d2/6cc5495f807f458b374a7d101988773c/_/download/contextbatch/css/editor-content,-_super/batch.css?conditionalComment=lte+IE+9&amp;confluence.table.resizable=true&amp;confluence.view.edit.transition=true" data-wrm-key="editor-content,-_super" data-wrm-batch-type="context" media="all">
+<![endif]--> 
+<LINK href="Help_Config%20Wizard%20-%20External-Customer_files/colors.css" rel="stylesheet" 
+type="text/css" media="all">     
+<META name="GENERATOR" content="MSHTML 11.00.9600.19155"></HEAD>     
+<BODY class="mceContentBody aui-theme-default wiki-content fullsize">
+<P>&nbsp;</P>
+<H1>Introduction into Config Wizard</H1>
+<H2>Overview over GUI Elements</H2>
+<P class="Body">Config Wizard is a GUI-based configuration tool that has the 
+following main characteristics:</P>
+<UL>
+  <LI class="Body">Offline mode to configure microchip registers (timers, 
+  interrupts, I/O,…) to include into existing source code, e.g. for the Embedded 
+  Power ICs</LI>
+  <LI class="Body">Online mode to communicate with certain microchips via 
+  Infineon uIO directly, e.g. for SBC and Bridges</LI>
+  <LI class="Body">Integration into Keil µVision 5</LI>
+  <LI class="Body">Many visualization elements to display current values</LI>
+  <LI class="Body">Code generation for initialization</LI>
+  <LI class="Body">Free configurable GUI for new controllers and special use 
+  cases</LI>
+  <LI class="Body">Configurations can be saved and loaded</LI></UL>
+<P class="Body"><BR></P>
+<P class="Body">When Config Wizard is started it normally shows an overview of 
+available microcontrollers from which one can be selected by mouseclick. This 
+picture shows different chip families in three tabs ("System Basis Chips", 
+"Embedded Power ICs”, "Bridge Driver"). Depending on your version/delivery you 
+may have more or less controllers in the selection or possibly a fixed one is 
+loaded directly after startup.</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_15-7-21.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-7-16_15-7-21.png" 
+data-image-width="648" data-image-height="599" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_15-7-21.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-7-16_15-7-21.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="87624954" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-7-16_15-7-21.png?version=1&amp;modificationDate=1531746441000&amp;api=v2"></P>
+<H2>Overview over Menus</H2>
+<P class="Body">The Config Wizard has many additional functions that can be 
+performed via the menus.</P>
+<H3>The "File" Menu</H3>
+<P class="Body">In the file menu there are functions to load and save the 
+current state of the UI.</P>
+<P class="Body"><IMG height="250" title="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_14-42-5.png" 
+class="confluence-embedded-image confluence-thumbnail" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-7-16_14-42-5.png" 
+data-image-width="268" data-image-height="293" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_14-42-5.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-7-16_14-42-5.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="87624777" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-7-16_14-42-5.png?version=1&amp;modificationDate=1531744925000&amp;api=v2"></P>
+<P class="Body"><BR></P>
+<P class="Body">Most of the UI elements shown in Config Wizard have a state that 
+can be saved to and loaded from a so called icwp file. This mainly makes sense 
+for offline UIs, because the elements there represent certain device properties. 
+So when a controller is set to a defined state by the user this state can be 
+saved to a file. In online mode this only makes sense for the Table element of 
+the Register View, because all other elements are changed for each new command 
+sent to the device. The Table has its own save button.</P>
+<UL>
+  <LI class="Body"><STRONG>Home:</STRONG> goes back to the main selection of 
+  microcontrollers.</LI>
+  <LI class="Body"><STRONG>Load:</STRONG> loads an icwp file and sets the UI 
+  elements according to its content.</LI>
+  <LI class="Body"><STRONG>Save:</STRONG> saves the current state of the UI to a 
+  file.</LI>
+  <LI class="Body"><STRONG>Save As:</STRONG> saves the current state of the UI 
+  to a file, allowing the user to change the name.</LI>
+  <LI class="Body"><STRONG>Exit:</STRONG> leaves the program. If there are 
+  unsaved changes (state changes of the UI elements) the user is asked for 
+  saving it.</LI>
+  <LI class="Body"><STRONG>Export Header Files:</STRONG> writes the register 
+  values represented by the UI elements to one ore more 'C' header files</LI></UL>
+<H3>The "Extra" Menu</H3>
+<P class="Body">This menu contains many different functions:</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_14-46-35.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-7-16_14-46-35.png" 
+data-image-width="348" data-image-height="515" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_14-46-35.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-7-16_14-46-35.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="87624805" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-7-16_14-46-35.png?version=1&amp;modificationDate=1531745194000&amp;api=v2"></P>
+<UL>
+  <LI class="Body"><STRONG>Open XML:</STRONG> opens an xml file containing the 
+  definition of a UI (not to be confused with an icwp file that contains the 
+  state of such an UI). This is rarely used as normally such a file is loaded as 
+  described in <A class="confluence-link" href="https://confluencewikiprod.intra.infineon.com/plugins/viewsource/viewpagesrc.action?pageId=81981545#ConfigWizard-CustomerHelp-overview" 
+  data-base-url="https://confluencewikiprod.intra.infineon.com" 
+  data-linked-resource-default-alias="overview" data-anchor="overview">overview 
+  over GUI elements </A>with clicking on the symbol of a controller after 
+  startup.</LI>
+  <LI class="Body"><STRONG>Reopen XML:</STRONG> reloads the current loaded UI 
+  and sets back all UI elements to their initial values.</LI>
+  <LI class="Body"><STRONG>Search GUI element: </STRONG>searches for a certain 
+  UI element and thus in normally for a register. It opens a dialog containing a 
+  combobox where the user can (supported by a completer list) enter a register 
+  name. This is mainly used in the offline mode and therefore not applicable for 
+  SBCs and Bridges.</LI></UL>
+<P><BR></P>
+<P style="margin-left: 30px;"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-28-44.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-28-44.png" 
+data-image-width="486" data-image-height="161" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-28-44.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-28-44.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981530" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-28-44.png?version=1&amp;modificationDate=1527680411000&amp;api=v2"></P>
+<P class="Body" style="margin-left: 30px;"><BR>The Config Wizard opens and 
+selects&nbsp;the UI element associated with the selected register. If the 
+element is currently not enabled it can't be selected and flashes in red for a 
+short time along with its tooltip opened.</P>
+<UL>
+  <LI class="Body"><STRONG>Show Differences:</STRONG> lets the user compare the 
+  values entered in the current UI with the values saved in an icwp file before. 
+  After selecting an icwp file to compare with, a dialog showing the differences 
+  appears:<BR><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_15-3-56.png" 
+  class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-7-16_15-3-56.png" 
+  data-image-width="688" data-image-height="345" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_15-3-56.png" 
+  data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+  data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+  data-linked-resource-default-alias="image2018-7-16_15-3-56.png" 
+  data-linked-resource-type="attachment" data-linked-resource-version="1" 
+  data-linked-resource-id="87624931" data-unresolved-comment-count="0" 
+  data-image-src="/download/attachments/81981545/image2018-7-16_15-3-56.png?version=1&amp;modificationDate=1531746235000&amp;api=v2"><BR>Next 
+  to the UI / register name the current and the file value are shown for 
+  different values. When the user clicks on the register name, he is navigated 
+  to the associated UI element.</LI>
+  <LI class="Body"><STRONG>Expand branch:</STRONG>&nbsp;expands all trees (or a 
+  selected one) on the screen.</LI>
+  <LI class="Body"><STRONG>Collapse branch:</STRONG> closes all trees (or a 
+  selected one) on the screen.</LI>
+  <LI class="Body"><STRONG>Settings:</STRONG> opens a dialog where some system 
+  settings can be altered:</LI></UL>
+<P class="Body" style="margin-left: 30px;"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_14-51-46.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-7-16_14-51-46.png" 
+data-image-width="840" data-image-height="391" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-7-16_14-51-46.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-7-16_14-51-46.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="87624861" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-7-16_14-51-46.png?version=1&amp;modificationDate=1531745505000&amp;api=v2"><BR>The 
+"Scripts Directory" is the start directory where the UI xmls are searched (not 
+to be confused with the files containing script commands controlling the 
+UI).</P>
+<P class="Body" style="margin-left: 30px;">When the combo box is opened a least 
+recent directory list is shown.</P>
+<P class="Body" style="margin-left: 30px;">The "Working Directory" is the 
+directory where the icwp files are loaded and saved and where the header files 
+are stored. This directory can't be set by the user but is set by the program 
+dynamically e.g. when an icwp file is loaded or stored.<BR>"uIO&nbsp; Logging" 
+makes sense in online UIs only where the data traffic to and from uIO can be 
+logged. A typical log output into the console window would look like this:</P>
+<P class="Body" style="margin-left: 30px;"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-31-17.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-31-17.png" 
+data-image-width="380" data-image-height="203" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-31-17.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-31-17.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981527" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-31-17.png?version=1&amp;modificationDate=1527680411000&amp;api=v2"><BR><BR>The 
+green lines are the data to uIO, the blue ones from uIO. Logging is mainly 
+needed for developing an UI xml and slows down execution of the Config Wizard 
+and reaction of the UI, so it only should be used when necessary.</P>
+<P class="Body" style="margin-left: 30px;">The "Scaling factor" is in 
+experimental stage currently and maybe not enabled in your version. It is used 
+mainly for scaling on 4K monitors.</P>
+<UL>
+  <LI class="Body"><STRONG>Get uIO Version:</STRONG> gets the firmware version 
+  of a connected uIO device and (if available) compares with the version of the 
+  currently loaded XML. The firmware of the respective uIO has to be updated 
+  manually. It then shows a messagebox with the firmware installed on the uIO 
+  and shows if this version is sufficient to run the current UI XML.<BR><IMG 
+  title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-31-48.png" 
+  class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-31-48.png" 
+  data-image-width="506" data-image-height="119" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-31-48.png" 
+  data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+  data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+  data-linked-resource-default-alias="image2018-5-7_10-31-48.png" 
+  data-linked-resource-type="attachment" data-linked-resource-version="1" 
+  data-linked-resource-id="81981525" data-unresolved-comment-count="0" 
+  data-image-src="/download/attachments/81981545/image2018-5-7_10-31-48.png?version=1&amp;modificationDate=1527680411000&amp;api=v2"></LI>
+  <LI class="Body"><STRONG>Update uIO:</STRONG> lets the user update the uIO to 
+  another firmware version. After a warning, if uIO is connected already to the 
+  UI XML it asks the user for a "hex" file containing the firmware for the uIO 
+  device, usually contained in a subfolder "uIO-Stick_Firmware". The update 
+  itself takes about a minute. Don't remove the uIO device during update 
+  process!</LI>
+  <LI class="Body"><STRONG>Run script file:</STRONG> runs a script file to 
+  automate operation.</LI>
+  <LI class="Body"><STRONG>Record script:</STRONG> Records the user actions on 
+  GUI into a script file.</LI>
+  <LI class="Body"><STRONG>Add script command:</STRONG> Adds a special command 
+  to the recording script.</LI>
+  <LI class="Body"><STRONG>Sign Configuration File:</STRONG> calculates a 
+  checksum over a UI xml file and inserts this checksum into the file. This is 
+  done to ensure that such a file is not changed by accident, resulting in 
+  unpredictable behavior and/or wrong register values. If a message like "File 
+  xxx.xml has been manipulated. Do not use it!" appears, the file is not the 
+  original one delivered by Infineon. You should only sign a file when you are 
+  sure what you are doing! This menu entry may be missing in your version of 
+  Config Wizard.</LI>
+  <LI class="Body"><STRONG>Validate XML:</STRONG> checks a UI xml file by many 
+  criteria for correctness. This is only useful for XML developers only, as UI 
+  XMLs distributed by Infineon are tested and should not contain errors. This 
+  menu entry may be missing in your version of Config Wizard.</LI>
+  <LI class="Body"><STRONG>Show locks:</STRONG> let the developer of an XML 
+  check if all lockings are correct.This menu entry may be missing in your 
+  version of Config Wizard, because it's useful for developers only.</LI>
+  <LI class="Body"><STRONG>Full screen</STRONG>: switches to full screen mode. 
+  Full screen mode can be exited with Ctrl-Shift-F.</LI></UL>
+<H2>Keil µVision 5 integration (depends on the used product)</H2>
+<P class="Body">If a product is used that supports offline mode and if the 
+Config Wizard notices on startup that a Keil µVision 5 is installed on the 
+system it asks to integrate itself into the Keil develop environment. A dialog 
+comes up where eventually already installed Config Wizards are shown and the 
+user can decide if he wants to integrate the Config Wizard into Keil (what means 
+that it can be started from Keil as an external tool):</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-34-1.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-34-1.png" 
+data-image-width="506" data-image-height="235" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-34-1.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-34-1.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981524" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-34-1.png?version=1&amp;modificationDate=1527680411000&amp;api=v2"></P>
+<P class="Body"><BR></P>
+<P class="Body">After integration the Config Wizard appears as a new entry in 
+Keil µVisions "Tool" menu:</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-34-14.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-34-14.png" 
+data-image-width="539" data-image-height="205" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-34-14.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-34-14.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981523" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-34-14.png?version=1&amp;modificationDate=1527680411000&amp;api=v2"></P>
+<P class="Body">It can be removed, renamed,… in Keils "Tools / Customize Tools 
+menu…":</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-34-29.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-34-29.png" 
+data-image-width="428" data-image-height="355" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-34-29.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-34-29.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981522" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-34-29.png?version=1&amp;modificationDate=1527680411000&amp;api=v2"></P>
+<P class="Body">When a command path is detected as broken on startup of Config 
+Wizard, its entry in the Tools Menu is removed (user is asked for 
+confirmation).</P>
+<P class="Body"><BR></P>
+<P><IMG class="editor-inline-macro" src="Help_Config%20Wizard%20-%20External-Customer_files/macro.png" 
+data-macro-name="anchor" data-macro-schema-version="1" 
+data-macro-default-parameter="command_line_options" data-macro-id="7c8aabcd-ba46-4bda-b0b7-7ed969241e97">2&nbsp;Command 
+line options</P>
+<P class="Body">The Config Wizard can be started with several command line 
+options that are enumerated in the following:</P>
+<P>ConfigWizard [&lt;Filename.xml|icwp&gt;] [-g] [-q] [-s] [-b&lt;Batchfile&gt;] 
+[-c&lt;Outfile&gt;] [-o&lt;Outfile&gt;] [-?]</P>
+<UL>
+  <LI>-g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Generate Header Files (non-interactive)</LI>
+  <LI>-q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Quiet mode (no popup massages on errors)</LI>
+  <LI>-s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Save Project File, with correct HASH, and generate Header Files</LI>
+  <LI>-x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Terminate program after Keil integration</LI>
+  <LI>-k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Enable Keil µVision Integration</LI>
+  <LI>-b&lt;Batchfile&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Run batch 
+  file</LI>
+  <LI>-c&lt;Outfile&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Set console logging file (for output of console and, if in quiet mode for 
+  message box output)</LI>
+  <LI>-o&lt;Outfile&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Set output logging file (for output of batchfile/scripting)</LI>
+  <LI>-?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Help</LI></UL>
+<H1 class="Body">Main Use Cases&nbsp;</H1>
+<P>There exist online and offline type of the UI. Both types are not excluding 
+each other mutually by design, but usually they do not overlap.</P>
+<H2>Offline mode, e.g. for Embedded Power ICs</H2>
+<P class="Body">The GUI described below is a typical representative for an 
+offline UI, that means that the user can change the settings of the 
+microcontroller and export these settings into a 'C' headerfile. This headerfile 
+typically is included in a user supplied software and the <EM>#define</EM>s in 
+the headerfiles are written into registers to initialize the controller on 
+startup of the software.</P>
+<P class="Body">After selecting a controller in the start screen, the UI for the 
+selected chip is loaded. A typical user interface could look like this 
+(describing the SCU (=System Control Unit) part of the TLE987 device):</P>
+<P class="Body"><BR></P>
+<P class="Body">&nbsp;<IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-15-48.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-15-48.png" 
+data-image-width="680" data-image-height="458" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-15-48.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-15-48.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981538" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-15-48.png?version=1&amp;modificationDate=1527680412000&amp;api=v2"></P>
+<P class="Body">At the top there is a menu, which has the following 
+functions:</P>
+<UL>
+  <LI class="Body">"Home" (Ctrl + N) which goes back to the start screen 
+  allowing to select another device. If changes were made you are asked to save 
+  the current state in a so called "icwp" file.</LI>
+  <LI class="Body">"Load" which allows you to load such an icwp file.</LI>
+  <LI class="Body">"Save" (Ctrl + N) saves an icwp file</LI>
+  <LI class="Body">"Expand" expands all trees (or a selected one) on the 
+  screen</LI>
+  <LI class="Body">"Collapse" closes all trees (or a selected one) on the 
+  screen</LI></UL>
+<P class="Body">The "Tab" element is an opportunity to group related functional 
+units together (and to omit overloading the screen). In each tab only the 
+elements of the device that concern a certain functionality are shown.</P>
+<P class="Body">The central screen is populated with several elements like</P>
+<UL>
+  <LI class="Body">Tree: groups elements in a hierarchical manner</LI>
+  <LI class="Body">Checkbox: is typically used for binary selection 
+  (enable/disable, on/off,…)</LI>
+  <LI class="Body">Radiobuttons: are used to select from a list of mutually 
+  exclusive alternatives</LI>
+  <LI class="Body">Combobox: also let the user select between options</LI>
+  <LI class="Body">Spinbox, which allows to enter numerical values. Also 
+  available in a hexadecimal and a floating-point variant.</LI>
+  <LI class="Body">Calculations: combine the values of several elements and 
+  writes a result to screen. In the example above a frequency is calculated from 
+  e.g. a base frequency, divider, etc.</LI>
+  <LI class="Body">The statusline finally shows the currently loaded GUI xml 
+  along with its version.</LI></UL>
+<P class="Body">Checkboxes and radiobuttons not only can let the user select 
+different values but also can have so-called "branches", sub-elements that are 
+only accessible when the head of the branch is selected. Examples are the 
+"Override Internal Oscillator Frequency" checkbox that enables the “Int. fOSC” 
+spinbox or the marked Radiobuttons that enable either "Automatic Clock 
+Configuration" with its "fSYS" combobox or the "Manual Clock Configuration" with 
+a large subtree of elements.</P>
+<P class="Body">Other elements not present in the picture above are edit fields 
+where a text (e.g. the name of a callback function) can be entered, or buttons 
+that mainly are used to send data to a device, LEDs to indicate a status, images 
+or a set of elements &nbsp;that can show and log data incoming from a uIO.</P>
+<P class="Body">As one can see, not all elements are usable, some are disabled. 
+This is another feature, called "locking". Certain UI elements disable (in the 
+sense of the user can't change them) other elements (and set them to a 
+predefined value), because the controller function determined by the first UI 
+element forces another element (that represent another controller function) to 
+be set to a fixed value. A typical example would be: the user enables an UART. 
+This UART uses a certain pin for its TX wire. But this wire could also be 
+configured as a GPIO output from another UI element. So, if the UART is enabled, 
+the associated GPIO UI element would be disabled.</P>
+<P class="Body">When the user hovers over the UI elements with the mouse, over 
+most of them a tooltip appears that shows the most importants attributes of the 
+UI. You can see the associated register (or sub-part of a register), the header 
+file into the value would be exported and the UI elements that this element is 
+locking (or, if it is locked itself, the UI element which locks it, would be 
+shown):</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-19-32.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-19-32.png" 
+data-image-width="680" data-image-height="244" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-19-32.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-19-32.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981537" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-19-32.png?version=1&amp;modificationDate=1527680412000&amp;api=v2"></P>
+<P class="Body"><BR></P>
+<P class="Body"><BR></P>
+<H2>Online mode, e.g. for SBC or Bridges</H2>
+<P class="Body">Another type of the UI would be the online type (both types are 
+not excluding each other mutally by design, but usually they do not overlap). 
+The online type communicates via a uIO module (which converts USB to LIN / SPI) 
+with a controller that in turn has interpreter software running on it. To this 
+interpreter commands can be written to configure / start functions of the 
+controller.&nbsp;Please note that the uIO must be plugged in before the XML file 
+is loaded.</P>
+<P class="Body">A typical UI for the online type looks like this (status line, 
+etc. omitted):</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-20-10.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-20-10.png" 
+data-image-width="680" data-image-height="608" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-20-10.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-20-10.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981536" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-20-10.png?version=1&amp;modificationDate=1527680412000&amp;api=v2"></P>
+<P class="Body">Essential newly added elements are the LED that normaly shows a 
+binary state (here e.g. the states of the uIO and the connected 9263 chip) and 
+the pushbutton that is used in this example to send commands to the controller 
+via the uIO. The commands itself are built up from several UI elements, and-ing 
+and or-ing bits together. As we can see another possibility to build the 
+commands is given starting the Config Wizard with the register view.</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-21-8.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-21-8.png" 
+data-image-width="680" data-image-height="480" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-21-8.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-21-8.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981534" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-21-8.png?version=1&amp;modificationDate=1527680411000&amp;api=v2"></P>
+<P class="Body">The upmost group "Register Selection" shows information taken 
+from a svd file (containing information about the registers of a controller). 
+The first combobox lists all subsystems of the chip, in the svd designated as 
+<EM>peripherals</EM>.</P>
+<P class="Body">These peripherals contain <EM>registers</EM>, which in turn are 
+made up of <EM>fields</EM>, one or more bits responsible for a certain 
+function.</P>
+<P class="Body">The user selects a peripheral ("Register Domain Selection") and 
+all registers contained in this peripheral are copied into the second combobox 
+("Register Selection"). The fields contained in the register there selected are 
+shown in the table below, the <EM>registerview</EM>. Often there is a 
+description available in the svd file, this is shown in tooltips in the several 
+elements.</P>
+<P class="Body">Now in the registerview for each field the desired value can be 
+selected. In most cases there are predefined values for the field-values, so 
+called "enumerates". If enumerates are available, a combobox opens when a field 
+is selected, containing the values in a textual form:</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-21-31.png" 
+class="confluence-embedded-image confluence-thumbnail" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-21-31.png" 
+data-image-width="274" data-image-height="145" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-21-31.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-21-31.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981533" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-21-31.png?version=1&amp;modificationDate=1527680411000&amp;api=v2"></P>
+<P class="Body">When there are no enumerates in the svd then the field can be 
+edited (also in place)</P>
+<UL>
+  <LI class="Body">in 1 bit wide fields (bool) with a checkbox</LI>
+  <LI class="Body">in &gt;1 bit wide fields with a spinbox (range is derived 
+  from width)</LI></UL>
+<P class="Body">The header line besides the field name contains the bits 
+affected and the read/write or read-only characteristic.</P>
+<P class="Body">Right above the registerview there is a radiogroup that can be 
+selected to either "Read" or "Write/Clear". This special chip needs this 
+information too (other maybe won't), it will be combined with the address when 
+sent.</P>
+<P class="Body">When the register is filled as requested, the button "--&gt;" is 
+pressed and the register and its value is copied to the next line of the table 
+(or the current selected line is overwritten, depending on which edit mode is 
+selected).</P>
+<P class="Body">The table can be edited in the following manner:</P>
+<UL>
+  <LI class="Body">Lines can be deleted</LI>
+  <LI class="Body">Lines can be moved via Drag-And-Drop</LI>
+  <LI class="Body">Some columns can be edited directly (W/R, Value, Delay and 
+  Comment).</LI>
+  <LI class="Body">Lines can be copied with Ctrl-C, Ctrl-V.</LI>
+  <LI class="Body">The contents of the table can be saved in a file and loaded 
+  from there.</LI></UL>
+<P class="Body">Numerical values can be entered as decimal, hexadecimal (with a 
+"0x" prefix) or binary (with a "0b" prefix).</P>
+<P class="Body">The "Value" column has a tooltip showing what the value means, 
+in deciphering the value into enumerates.</P>
+<P class="Body">The table can be sent to uIO (starting from the selected line), 
+where after a line a delay (in msec) can take place, or a single step mode can 
+be selected (after each sent command a messagebox asks for continuation or 
+stop). The answer from the uIO device is written to the "Answer" column.</P>
+<P class="Body">Also the content of the table can be exported as a "C" function 
+into a file, so the sequence can be added to own code.</P>
+<P class="Body">Further Elements commonly used when communicating with a 
+controller are <EM>Plot</EM>, <EM>Dial</EM> and <EM>Thermo</EM>, with which 
+constantly changing data incoming from a device can be monitored (examplary 
+display - not generated from SBC or Bridge):</P>
+<P class="Body"><IMG title="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-20-44.png" 
+class="confluence-embedded-image" src="Help_Config%20Wizard%20-%20External-Customer_files/image2018-5-7_10-20-44.png" 
+data-image-width="407" data-image-height="756" data-location="ATV SAMBA > Config Wizard - Customer Help > image2018-5-7_10-20-44.png" 
+data-linked-resource-container-version="54" data-linked-resource-container-id="81981545" 
+data-linked-resource-content-type="image/png" data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="image2018-5-7_10-20-44.png" 
+data-linked-resource-type="attachment" data-linked-resource-version="1" 
+data-linked-resource-id="81981535" data-unresolved-comment-count="0" 
+data-image-src="/download/attachments/81981545/image2018-5-7_10-20-44.png?version=1&amp;modificationDate=1527680412000&amp;api=v2"></P>
+<H1><IMG class="editor-inline-macro" src="Help_Config%20Wizard%20-%20External-Customer_files/macro(1).png" 
+data-macro-name="anchor" data-macro-schema-version="1" 
+data-macro-default-parameter="error_messages" data-macro-id="353332e9-ced2-4b1c-b7a3-09ae61365d9a">3 
+Appendix: Warnings and Errormessages</H1>
+<P class="Body">Several warnings and errormessages are emitted from Config 
+Wizard. Some of them are emmited by default to console, others to a messagebox. 
+All can be redirected to messagebox, console or file with command line options 
+or script command, see <A class="confluence-link" href="https://confluencewikiprod.intra.infineon.com/plugins/viewsource/viewpagesrc.action?pageId=81981545#ConfigWizard-CustomerHelp-command_line_options" 
+data-base-url="https://confluencewikiprod.intra.infineon.com" 
+data-linked-resource-default-alias="command_line_options" data-anchor="command_line_options">Command 
+line options</A> and "Script commands"&nbsp;in programmers manual.</P>
+<P class="Body">Following is a list of all this messages, categorized after 
+place of appearance.</P>
+<P class="Body"><BR></P>
+<P class="Body"><STRONG><U>Messages during loading of XML file:</U></STRONG></P>
+<TABLE class="wrapped confluenceTable">
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Message</U></STRONG></P></TD>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Meaning</U></STRONG></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Not found in svd file: &lt;define&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>UI element has no "svd=0" and corresponding define&nbsp;isn't in 
+      svd.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Found lockon without "=" at definition 
+      of:&nbsp;&lt;define&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>Lockons must have the form <EM>define=value</EM>&nbsp;or 
+      <EM>define.label=value</EM></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: &lt;sender&gt; wants to lock label on 
+      spinbox:&nbsp;&lt;LockString&gt;.</P></TD>
+    <TD class="confluenceTd">
+      <P>A spinbox can't be locked in the form 
+  <EM>define.label=value</EM></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: &lt;sender&gt; wants to lock label on 
+      hexspinbox:&nbsp;&lt;LockString&gt;.</P></TD>
+    <TD class="confluenceTd">
+      <P>A spinbox can't be locked in the form 
+  <EM>define.label=value</EM></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: &lt;sender&gt; wants to lock label on 
+      doublespinbox:&nbsp;&lt;LockString&gt;.</P></TD>
+    <TD class="confluenceTd">
+      <P>A spinbox can't be locked in the form 
+  <EM>define.label=value</EM></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: &lt;sender&gt; wants to lock &lt;receiver&gt; 
+      to&nbsp;&lt;LockValue&gt;.</P></TD>
+    <TD class="confluenceTd">
+      <P>The element &lt;receiver&gt; can't be locked (because it is 
+      an&nbsp;edit, the value isn't valid or out of range, the label isn't 
+      contained in the&nbsp;combobox or radio item list).</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: register has two different headers (&lt;headerfile1&gt;, 
+      &lt;headerfile2&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A register can only be contained in one header file. This can e.g. 
+      occure when (different) parts of a register are referenced 
+      with&nbsp;[msb:lsb] format from two UI elements that are in different 
+      header files&nbsp;(header attribute).</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Version is valid for the currently loaded XML.</P></TD>
+    <TD class="confluenceTd">
+      <P>An xml that uses uIO communication and has the fwversion element 
+      included checks the version of a connected uIO firmware. The version 
+      check&nbsp;returned a valid version.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Version is too low for the currently loaded XML (needs 
+      &lt;Version&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>An xml that uses uIO communication and has the fwversion 
+      element&nbsp;included checks the version of a connected uIO firmware. The 
+      version check&nbsp;returned that firmware version is too low.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Version is too high for the currently loaded XML (needs 
+      &lt;Version&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>An xml that uses uIO communication and has the fwversion element 
+      included checks the version of a connected uIO firmware. The version 
+      check&nbsp;returned that firmware version is too low.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Currently loaded XML has no version to compare with.</P></TD>
+    <TD class="confluenceTd">
+      <P>The xml uses uIO communication but has no fwversion 
+      element&nbsp;included.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Could not retrieve firmware version.</P></TD>
+    <TD class="confluenceTd">
+      <P>The uIO is not connected or not functioning. The firmware&nbsp;version 
+      check can not be executed.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error:Unknown format in &lt;define&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>Formatstring in math couldn’t be interpreted. Must 
+      be&nbsp;sprint()-like.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Trying to set "&lt;define&gt;" to invalid 
+    value&nbsp;"&lt;value&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>UI element &lt;define&gt; could not be set to &lt;value&gt;. 
+      The&nbsp;reason can either be a setdef by another UI element or a default 
+      attribute.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Default value for &lt;define&gt; (&lt;value&gt;) is out of&nbsp;allowed 
+      range: &lt;min&gt;..&lt;max&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The spinbox element &lt;define&gt; could not be set to &lt;value&gt;, 
+      because it is out of range.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Cannot read file &lt;file&gt;<BR>Not starting with a container 
+    type!</P></TD>
+    <TD class="confluenceTd">
+      <P>After the header containing of checksum, version, fwversion, migrate, 
+      svd elements (see "Others" in programmers manual) an XML file 
+      must&nbsp;start with on of the container types. See "Containers"&nbsp;in 
+      programmers manual.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Bit order error in &lt;define&gt;: &lt;msb&gt; &lt; &lt;lsb&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>MSB is less than LSB in a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Trying to set MSB: &lt;msb&gt; and LSB: &lt;lsb&gt; for 
+      &lt;define&gt;&nbsp;which is of type: &lt;type&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The UI element does not allow to set MSB, LSB.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Radio without define is not&nbsp;allowed: &lt;define&gt; 
+      (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>radio</EM> must have a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Editbox without define is not&nbsp;allowed: &lt;define&gt; 
+      (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>An <EM>editbox</EM> must have a&nbsp;<EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Log without define is not allowed: &lt;define&gt; (Line 
+      &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>log</EM> must have a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Lineedit without define is&nbsp;not allowed: &lt;define&gt; 
+      (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>An <EM>edit</EM> must have a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Checkbox without define is&nbsp;not allowed: &lt;define&gt; 
+      (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>checkbox</EM> must have a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Combobox without define is&nbsp;not allowed: &lt;define&gt; 
+      (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>combobox</EM> must have a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Var without define is not&nbsp;allowed: &lt;define&gt; (Line 
+      &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>var</EM> must have a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Spinbox without define is not&nbsp;allowed: &lt;define&gt; 
+      (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>spinbox</EM> must have a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Doublespinbox without define&nbsp;is not allowed: 
+      &lt;define&gt; (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>doublespinbox</EM> must&nbsp;have a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Hexspinbox without define is&nbsp;not allowed: 
+      &lt;define&gt; (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>hexspinbox</EM> must have&nbsp;a <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: min range in spinbox is not a&nbsp;valid number 
+      &lt;define&gt; (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>min</EM> part in the <EM>range</EM> attribute of the spinbox 
+      &lt;<EM>define</EM>&gt; is not a valid number.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: max range in spinbox is not a&nbsp;valid number 
+      &lt;define&gt; (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>max </EM>part in the <EM>range</EM> attribute of the spinbox 
+      &lt;<EM>define</EM>&gt; is not a valid number.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: min &gt;&nbsp;max in spinbox &lt;define&gt; (Line 
+      &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>min</EM> part is &nbsp; greater than the <EM>max </EM>part in 
+      the <EM>range</EM> attribute of the spinbox 
+  &lt;<EM>define</EM>&gt;.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: min range in doublespinbox is&nbsp;not a valid number 
+      &lt;define&gt; (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>min</EM> part in the <EM>range</EM> attribute of the 
+      doublespinbox &lt;<EM>define</EM>&gt; is not a 
+valid&nbsp;number.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: max range in doublespinbox is &nbsp; not a valid number 
+      &lt;define&gt; (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>max </EM>part in the <EM>range</EM> attribute of the 
+      doublespinbox &lt;<EM>define</EM>&gt; is not a valid number.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: min &gt; max in doublespinbox &lt;define&gt; (Line 
+      &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>min</EM> part is&nbsp;greater than the <EM>max </EM>part in the 
+      <EM>range</EM> attribute of the 
+      doublespinbox&nbsp;&lt;<EM>define</EM>&gt;.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: min range in hexspinbox is&nbsp;not a valid number 
+      &lt;define&gt; (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>min</EM> part in the <EM>range</EM> attribute of the hexspinbox 
+      &lt;<EM>define</EM>&gt; is not a valid number.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: max range in hexspinbox is&nbsp;not a valid number 
+      &lt;define&gt; (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>max </EM>part in the <EM>range</EM> attribute of the hexspinbox 
+      &lt;<EM>define</EM>&gt; is not a valid number.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: min &gt; &nbsp; max in hexspinbox &lt;define&gt; (Line 
+      &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The <EM>min</EM> part is&nbsp;greater than the <EM>max </EM>part in the 
+      <EM>range</EM> attribute of the hexspinbox 
+  &lt;<EM>define</EM>&gt;.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Warning: Register combined with&nbsp;"%g" format: &lt;define&gt; 
+      (Line &lt;Nr&gt;)</P></TD>
+    <TD class="confluenceTd">
+      <P>The "%g" format is obsolete and&nbsp;should no longer be 
+used.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Error: Wrong Version of Config Wizard.</P></TD>
+    <TD class="confluenceTd">
+      <P>The version of the Config Wizard is less than the version 
+      <EM>attribute</EM> in the ifxmlcfg element demands.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd" colspan="1">Picture of &lt;image&gt; element 
+      couldn't be loaded.</TD>
+    <TD class="confluenceTd" colspan="1">&nbsp;The path to the Image 
+      (attribute <EM>file,</EM> or field <EM>image</EM> when set via<EM> 
+      setDef)</EM>&nbsp;in the <EM>image </EM>element is invalid.</TD></TR>
+  <TR>
+    <TD class="confluenceTd" colspan="1">Icon of &lt;button&gt; element 
+      couldn't be loaded.</TD>
+    <TD class="confluenceTd" colspan="1">The path to the icon (attribute 
+      <EM>icon)</EM>&nbsp;in the <EM>button</EM> element is invalid.</TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Found &lt;radiobutton&gt; element that's not within a 
+    &lt;radio&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>A <EM>radiobutton</EM> element &nbsp; is only allowed within a 
+      <EM>radio</EM>&nbsp;element.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>New project: &lt;file&gt; No headerfiles written. To update your &nbsp; 
+      configuration please save this file!</P></TD>
+    <TD class="confluenceTd">
+      <P>Only hint to user after a project has been opened.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Loaded project: &lt;file&gt; No headerfiles written. To update your 
+      configuration please save this file!</P></TD>
+    <TD class="confluenceTd">
+      <P>Only hint to user after a icwp file has been 
+loaded.</P></TD></TR></TBODY></TABLE>
+<P><BR></P>
+<P class="Body"><STRONG><U>Messages during validation of XML 
+file:</U></STRONG></P>
+<TABLE class="wrapped confluenceTable">
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Message</U></STRONG></P></TD>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Meaning</U></STRONG></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Starting validation File: &lt;filename&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>Validation has started</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Finished validation File: &lt;filename&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>Validation has ended</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Validation Error: Unable to parse XML 
+      file&nbsp;&lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>XML file is invalid</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Validation Error: Failed to open or unable to parse&nbsp;SVD 
+      file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>svd file is missing or invalid</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML Error: Validation Error: The following defines could not be found 
+      in SVD file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>Defines without svd="0" must be contained in svd file.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following math defines could not be found in XML 
+      file&nbsp;&lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>A define used in a math formula isn't defined in the XML.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following &lt;element&gt; defines could not be found in XML file 
+      &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>A define used in an action or led isn't defined in the XML.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following override/hide values for &lt;define&gt; define could not 
+      be found in SVD file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>A combobox tried to use an enumeration value from svd value 
+      that&nbsp;doesn't exist.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following &lt;element&gt; elements do not have uielement="branch" 
+      but spans other elements in XML file&nbsp;&lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>comboboxes and radios can contain other elements only if 
+      the&nbsp;attribute uielement is set to "branch".</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following &lt;element&gt; elements with number of 
+      items&nbsp;exceeding range of define in XML file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The combobox or radio contains too much elements.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following &lt;element&gt; elements contain invalid default values 
+      in XML file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The default of the combobox or radio is invalid.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following combo/radio elements are set to invalid 
+      default&nbsp;value in XML file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following spinbox elements with invalid default value in 
+      XML&nbsp;file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following uielement defines which should not have svd="0" contained 
+      in XML file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>A define has a register format (peripheral.register. field) 
+      but&nbsp;has a svd="0" attribute.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following branch elements are not within a 
+      treecontainer&nbsp;element in XML file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P><BR></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following doublespinbox defines with step exceeding&nbsp;precision 
+      of default in XML file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The precision (decimal place) of the <EM>step</EM> attribute is 
+      exceeding the precision of the <EM>default</EM> attribute (which sets 
+      the&nbsp;precision by its decimal place).</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following spinbox elements with default or range value 
+      not&nbsp;within range of define in XML file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The attributes range or default of the <EM>spinbox, hexspinbox, 
+      doublespinbox</EM> elements are not within the&nbsp;range determined by 
+      the width of the <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following combo elements with number of items exceeding 
+      size&nbsp;of field in SVD file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The number of <EM>item</EM>s within&nbsp;the <EM>combo</EM> element is 
+      too large for the width of the define (e.g. determined by 
+  msb:lsb).</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following radio elements with number of items exceeding 
+      size&nbsp;of field in SVD file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The number of <EM>radiobuttons</EM>&nbsp;within the <EM>radio</EM> 
+      element is too large for the width of the define (e.g. determined by 
+      msb:lsb).</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>The following defines could not be found in SVD 
+      file&nbsp;&lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>All <EM>define</EM>s without a <EM>svd="0"</EM> must be contained 
+      in&nbsp;the svd file.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>default with "=" must have "label" on its &nbsp; left side, at line 
+      &lt;Nr&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>Attribute <EM>default</EM> can&nbsp;have the formats "value" or 
+      "label=value".</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>An error occured while reading xml 
+      file:&lt;file&gt;&nbsp;&lt;errorstring&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>XML file isn't valid.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Failed to open or unable to parse SVD file &lt;file&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>svd file isn't valid.</P></TD></TR></TBODY></TABLE>
+<P><BR></P>
+<P class="Body"><STRONG><U>Messages that can occure during operation of the 
+Config Wizard:</U></STRONG></P>
+<TABLE class="wrapped confluenceTable">
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Message</U></STRONG></P></TD>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Meaning</U></STRONG></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Warning: &lt;define1&gt; has caused an overflow 
+      in&nbsp;&lt;define2&gt;. Highest possible value: &lt;value&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>A calculation resulted in an overflow/underflow of another 
+      <EM>define</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>&lt;define&gt; is locked by…</P></TD>
+    <TD class="confluenceTd">
+      <P>TODO: Example</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Conflict cleared: Over-/Underflow in: &lt;define&gt;.</P>
+      <P>(&lt;Nr&gt; conflicts in current project)</P></TD>
+    <TD class="confluenceTd">
+      <P>A conflict has been cleared.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Invalid value in ledb: "&lt;sender&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>This should never occure</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Invalid value in recdata: "&lt;recDataString&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>One of the elements in the &lt;recDataString&gt; is invalid. 
+      The&nbsp;elements can consist of <EM>define</EM>s, <EM>var</EM>s or "?". 
+      Presumably a&nbsp;name is misspelled.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Invalid value in setdef: "&lt;setDefString&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>One of the elements in the &lt;setDefString&gt; is invalid. 
+      Either&nbsp;the connecting "=" is missing, a <EM>define</EM> is misspelled 
+      or a constant value (at the right) is an invalid number.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Invalid value in formula: "&lt;define&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>In the <EM>formula</EM> &nbsp; attribute of a <EM>math</EM> element a 
+      &nbsp; subpart can not be interpreted as a constant, <EM>define</EM>, 
+      <EM>var</EM>.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Send USB: Cannot convert "&lt;sendString&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>One of the elements in the &lt;sendString&gt; is invalid. 
+      The&nbsp;elements can consist of <EM>define</EM>s, <EM>var</EM>s or number 
+      constants. Presumably a &nbsp; name is misspelled or a constant is 
+      invalid.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>XML ERROR!</P>
+      <P>Invalid lock: "&lt;lockString&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>One of the elements in the &lt;lockString&gt; is invalid. 
+      The&nbsp;elements can consist of defines, vars or number constants. 
+      Presumably a name&nbsp;is misspelled.</P>
+      <P>TODO: NOT ALL ERROR CASES ARE COVERED!</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Defines not representing an svd value can't have 
+      fields:&nbsp;&lt;define&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>A define that has a <EM>svd="0"</EM> &nbsp; is not allowed to be of the 
+      form "A.B.C"</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Tried to assign a GUI element to already assigned bits: &lt;define&gt; 
+      MSB: &lt;msb&gt; LSB: &lt;lsb&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>Certain bits of a register can only be assigned to not more 
+      than&nbsp;one UI element.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Cannot receive requested data from external device.&nbsp;<BR>USB 
+      timeout: cannot supply &lt;define&gt; ("&lt;redata&gt;").&nbsp;&lt;Nr1&gt; 
+      bytes needed, &lt;Nr2&gt; available.</P></TD>
+    <TD class="confluenceTd">
+      <P>Not enough data received from uIO to supply the recData from a sendUSB 
+      command. Either no uIO is connected or the recData string 
+      doesn't&nbsp;match the expected receive string.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Can not return value of type "&lt;type&gt;" 
+      from&nbsp;"&lt;define&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>A value from a define couldn't be read, because this type of&nbsp;value 
+      isn't contained in this element, e.g. tried to read an&nbsp;"index" from a 
+      checkbutton.</P></TD></TR></TBODY></TABLE>
+<P><BR></P>
+<P class="Body"><STRONG><U>Messages that can occure during load/save of XML and 
+icwp files:</U></STRONG></P>
+<TABLE class="wrapped confluenceTable">
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Message</U></STRONG></P></TD>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Meaning</U></STRONG></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Saved project: &lt;filename&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The icwp file &lt;filename&gt; has been saved.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Exported headerfile: &lt;filename&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The headerfile &lt;filename&gt; has been saved.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Successfully signed &lt;Nr&gt; files &lt;Files&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The checksum was calculated and written for the files stated.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Warning: Could not export headerfiles. &lt;defines&gt; are in a 
+      conflicted state!</P></TD>
+    <TD class="confluenceTd">
+      <P>When conflicted states exist (see console) headerfiles can not&nbsp;be 
+      exported.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Trying to load "&lt;define&gt;" with invalid 
+      value&nbsp;"&lt;value&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>A value in an icwp isn't compatible with the <EM>define</EM>. The icwp 
+      doesn't match the&nbsp;XML, probably because the icwp is 
+  outdated.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>File &lt;namefile&gt; has been manipulated.<BR>Do not use it!</P></TD>
+    <TD class="confluenceTd">
+      <P>The checksum of the xml / icwp isn't correct.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Version of this project's xml file does not match the current&nbsp;xml 
+      release version<BR>&nbsp; Project's xml version &lt;ICWPVers&gt;<BR>&nbsp; 
+      Current xml release: &lt;XMLVers&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The version of the icwp file doesn't match the associated 
+      XML&nbsp;file, probably because the icwp is outdated.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Could not find "&lt;filename&gt;".<BR>&nbsp; Please check your script 
+      folder settings.</P></TD>
+    <TD class="confluenceTd">
+      <P>The XML file &lt;filename&gt; asscociated to the icwp 
+      file&nbsp;couldn't be found.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>No checksum element found in &lt;filename&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>During load / save of a icwp file no checksum could be found.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Write error in file &lt;filename&gt;:</P></TD>
+    <TD class="confluenceTd">
+      <P>An error occurred during write of an icwp file.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>No scripts/index.xml found in &lt;path&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The index.xml file that is loading on startup and “New” could&nbsp;not 
+      be found.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Can not use "&lt;Command&gt;" with 
+    parameter&nbsp;"&lt;define&gt;"</P></TD>
+    <TD class="confluenceTd">
+      <P>Invalid <EM>define</EM> for script command (not found, invalid 
+      type,…)</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Index for &lt;define&gt;.&lt;Typ&gt; (&lt;index&gt;) is out 
+      of&nbsp;allowed range: &lt;min&gt;..&lt;max&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>Out of range in script file command</P></TD></TR></TBODY></TABLE>
+<P><BR></P>
+<P><STRONG><U>Messages that can occure during execution of a script 
+file:</U></STRONG></P>
+<TABLE class="wrapped confluenceTable">
+  <COLGROUP>
+  <COL>
+  <COL></COLGROUP>
+  <TBODY>
+  <TR>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Message</U></STRONG></P></TD>
+    <TD class="confluenceTd">
+      <P class="Body"><STRONG><U>Meaning</U></STRONG></P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Missing parameter&nbsp;&lt;ScriptLine&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The command shown in &lt;ScriptLine&gt; is missing a 
+  parameter.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Unknown command&nbsp;&lt;ScriptLine&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>The command shown in &lt;ScriptLine&gt; is invalid.</P></TD></TR>
+  <TR>
+    <TD class="confluenceTd">
+      <P>Unknown define &lt;Define&gt; in line &lt;ScriptLine&gt;</P></TD>
+    <TD class="confluenceTd">
+      <P>There is no object &lt;Define&gt; in the XML.</P></TD></TR></TBODY></TABLE>
+<H1>Export Control</H1>
+<P>The Software contained in this package may be subject to export control:</P>
+<P>ALNR: N</P>
+<P>ECCN:&nbsp;EAR99</P>
+<P>SIClass: N</P>
+<P>ALNR not equal to N are subject to European or German export authorization 
+when being exported out of the EU.</P>
+<P>Goods labelled with "ECCN not equal to N" are subject to US re-export 
+authorization.</P>
+<P>Even without a label, or with label "ALNR:N" or "ECCN:N" authorization may be 
+required due to the final whereabouts and purpose for which the goods are to be 
+used.</P>
+<P>Furthermore, the specified export control classifications are not binding, as 
+export control regulations are subject to interpretations, changes and 
+possible</P>
+<P>differences in national requirements. The ultimate determination of 
+applicable export control classifications and related categorizations remains 
+solely your responsibility.</P>
+<P>Infineon makes no representation as to the accuracy or reliability of the 
+information provided. You agree to use this information at your own risk and to 
+hold Infineon</P>
+<P>harmless in the event of any damages or penalties incurred by any party based 
+on your use or reliance on the information provided here.</P>
+<P>&nbsp;</P></BODY></HTML>

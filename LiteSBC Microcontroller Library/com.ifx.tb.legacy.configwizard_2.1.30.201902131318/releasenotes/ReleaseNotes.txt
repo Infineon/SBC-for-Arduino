@@ -1,0 +1,477 @@
+Release Notes - Config Wizard
+
+Version 2.1.30
+** Bugs
+	 - Shift left operator now working in math
+	 - No longer shows filename in windows header when tried to load Config Wizard V1 file
+
+** New Features
+	 - Implemented an option to integrate Config Wizard start through the Toolbox (from Keil integration menu)
+	  
+Version 2.1.28
+** Bugs
+	 - Keil integration after updating functional
+	 
+** Improvements
+	 - Attribute "stretch" added to ease layout
+	 - Several improvements/fixes on portmapping
+
+Version 2.1.26
+** Bugs
+	 - ConfigWizard no longer crashes sporadically if it was closed in FullScreen-Mode
+	 - Bug fixed in receiving bytes from serial line
+	 - ConfigWizard no longer crashes sporadically on loading XML
+	 - SetBackgroundcolor now works in Windows 10
+
+** Improvements
+	 - Check for uIO connection improved
+	 - Switching between fullscreen and maximized screen is stable
+	 
+** New Features
+	 - Inform the Keil uVision users if an update is available for Config Wizard
+	 - Implemented batch testing for reference user action ePower
+	 - Trigger button to open Port Mapping tool out of Config Wizard
+
+Version 2.1.24 - new build. Strongly recommended to update
+** Bugs
+	 - Variable initializing fixed
+
+Version 2.1.24
+** Bugs
+	 - Batch Test is stable
+	 - Bug with PDF documents fixed
+	 - Help button now opens the help feature automatically
+	 - Delays in sending commands now works	 
+
+** Improvements
+	 - Link between console output and jump to GUI element now works on most elements
+	 - ICW_template.xml, ICW_RV_template.xml and ICW_SVD_template.svd included in scripts-folder of clean Config Wizard version
+	 - Color of certain GUI-Elements can be set during runtime
+	 - Attribute "wordwrap" added to <text>
+	 - Checkbox has an attribute for inverting the locks
+	 - "startProgram" and "runScript" actions are available for timers also
+	 - GUI editor improved
+	 - Make Config Wizard output MISRA conform
+	 
+** New Features
+	 - Generate XML from SVD automatically
+	 - Script command for disabling console
+	 - Script command for handling uIO-errors
+	 - Buttons with background image shall show this image also when disabled
+	 - New XML command for setting the documentation folder
+	 - New actions added for executing a script inline and a Windows executable
+	 - "Nograyout" attribute also works when setting image programatically
+	 - Atttribute "resize" added to "tabcontainer" to resize if sub-pages differ in size
+	 - Add console for communication via USB
+	 - Create a JSON file for Port Mapping tool created now
+
+Version 2.1.22
+** Bugs
+	 - Allow script command clicked for pushbuttons also
+	 
+** Improvements
+	 - Script command for opening a tab added
+	 - Script command for raising an UI element added
+	 - Update Version and Release Notes
+	 - GUI-Editor improved
+	 - Add test for RegisterView and table
+
+** New Features
+	 - Portmapper xml files read
+	 - Add support for TLE9461-Library
+	 - Switch fullscreen mode on and off via new Script command SetFullscreen(bool)
+
+Version 2.1.20
+** Bugs
+	 - Horizontalline also works on Windows 10
+	 - Crash on non-existing action fixed
+	 - sendUSB can use binary strings also
+
+** Improvements
+	 - Implemented functions to enable testing of register view elements via scripts
+	 - math has a cond-attribute now
+	 
+Version 2.1.18
+** Bugs
+	 - Crash with actions fixed
+	 - Included help up to date
+	 - Warning message clearified
+
+** Improvements
+	- Remove/replace the term "ePower" from everywhere
+	- setDef can set define to another defines value
+	- Improved GUI-Editor
+	- Bugs in GUI-Editor fixed; Copy and Paste implemented	
+	- Harmonized the messages shown within config Wizard	
+	 
+	 
+Version 2.1.16
+** Bugs
+	 - Failing math asserts repaired
+
+** Improvements
+	- Added colums with calculated values in Register View
+	- Speeded up math calculatons dramatically (espc. nested calculations)
+	- The actions are executed in the sequence as stated in XML
+	- Simplified and speed up Script commands
+	- Expanded width of integers to 64 Bit
+	- After a sendUSB-Action a delay is possible now (via attribute)
+	- Updated help on Confluence and integrate into the tool
+	
+** New Features
+	- New message to be shown if Config Wizard v1 XMLs are opened
+	
+
+Version 2.1.14
+** Improvements
+	 - Adaption to meet corporate Design as much as possible
+	 - Read-only registers have no write options
+	 - Regview bitfields are set to default-values
+	 - Exchangeable curves in plots
+
+** New Features
+	 - If both uIO Sticks (uIO and uIO2) are recognized, provide a message box to the user
+	 - sendUSB is possible over serial line now
+	 - Added new UI element "slider"
+	 - Added a button to access e.g. the ePower Forum in ePower Mode
+
+
+Version 2.1.12
+** Bugs
+	- Unneccesary code removed
+	- uIO logging only logs until last non null character
+	- Timer no longer crashes sporadically on load of new XML
+	- Prefix/Suffix in math works
+	- Double locks prevented
+	- setdef allowed in lowercase
+	
+** Improvements
+	- "Validate XML" and "Sign configuration files" should open file dialog in working path
+	- Knob can be set in integer mode
+
+** New Features
+	- Presentation Mode for Config Wizard
+	- Image-tag can handle GIF-files (animated GIFs)
+
+
+Version 2.1.10
+** Bugs
+	 - Validation: wrong message (horizontalcontainer)
+	 - Regview register selection works with current version of Config Wizard
+	 - Windows and tabs are too small
+	 - Validation no longer reports "setdef" in item as an error 
+	 - Script execution no longer stops
+	 - Save icwp file does save all relevant header files
+	 - "setdef" does change values stored in icwp file
+	 - lockons in combobox dont block his own lockon from other item
+	 - uIO-2 communication fixed (byte shift)
+
+** Improvements
+	 - Link does work for most UI elements
+	 
+** New Features
+	 - Margins in Verticalcontainer, Groupcontainer, Gridcontainer reduced
+
+
+Version 2.1.8
+** Bugs
+	 - Defines in LED, Var and Buttons must be unique to rest of defines
+	 - When selecting Script console the console gets the focus
+	 - XML reader now recognizes errors like size="300" or size="300;auto"
+	 - Links to UI elements work in most cases now
+	 - Version number is displayed correctly
+	 - RegisterView is working
+	 - XOR now works on 32 bit values, binary output in math is ok
+	 - Hex values extended to 64 bit in constants
+	 - setdef now work correctly with combos when in old form (lowercase)
+	 - Emits error when image file of an image-elements is missing
+	 - No longer checks for svd attribute in image and led elements
+
+** Improvements
+	 - Support for FTDI260 improved
+	 - Cond attribute added to timer element (can also be used as a loop now)
+	 
+Version 2.1.6
+** Bugs
+	 - Bug with script command load() fixed (initialized AEs twice)
+	 - edit UI element now has correct size when default attribute is used
+	 - Unresolved Dialog now shows missing defines in all cases
+	 - math without define no longer shows svd in tooltip
+	 - setDef unified
+	 - "!=" operator for math and cond implemented
+	 - uIO logging is set to the correct values when a firmware check was executed
+	 - Only the first six bytes received from uIO are logged to make UI more responsive on heavy USB traffic
+	 - Anchors and TableOfContent automatically generated in help files
+	 - All messages reffereing to an XML error/warning automatically position into XML file
+	 - Error emitted when wrong event is used in action
+	 - cond now works with more than one action on the same event
+	 - In radiobutton and combobox "setdef" along with "setDef" is allowed
+	 - Bug when xml file is given at command line with backslashes corrected
+	 - Disabling by branch is not working for radiobuttons, if the radiobuttons are in a horizontalcontainer
+	 - Backgroundcolor can be set for buttons too
+
+** Improvements
+	 - Knob has "cond" attribute
+	 - sendUSB allows Vars
+	 - Hex and binary values in default of Var allowed
+	 - Attribute "readonly" implemented
+	 - Keil integration feature to be performed after installation of Config Wizard
+
+	 
+Version 2.1.4
+** Bugs
+	 - Error messages errorneous emitted removed
+	 - Error concerning load of icwp-files via script fixed.
+
+** Improvements
+	 - Image of ToggleButton can be set programmatically
+
+** New Features
+	 - Condition attribute added to actions
+	 - Plot can be reset to initial values
+	 - Plot has attributes to omit history values, scale the x-axis and to set the x-axis format
+	 - Added a button to access "Help" of Infineon Toolbox
+	 - Precision of timer improved
+	 - Content of SVD in tree shown
+	 - Script commands added to set Script and Work dir.
+
+	 
+Version 2.1.2
+** Bugs
+	 - TableOfContent automatically generated in help files
+	 - Define and Label no longer mixed up in Checkbox and ToggleButton combined in AbsoluteContainer/GroupBox
+	 - No crash on Macro Recording when recording was canceled before
+	 - Lockon mechanism checked for correctness, Lockon overview added for developer
+
+** Improvements
+	 - WorkDir / ScriptDir documented in external help
+	 - Plots appearence looks better.
+	 - Plot YMin/YMax can have double values now
+	 - Plot attributes can be set via setDef
+	 - ToggleButton now has Image attribte and autoscale feature
+	 - Diff dialog improved
+
+** New Features
+	 - User can access included pdf documents
+	 - Superscript and subscript for text and plot labels added
+	 - New UI element "Knob"
+	 - Keil integration feature to be performed after installation of Config Wizard possibe now
+
+
+Version 2.1.0
+
+** Bugs
+	- Navigation through keyboard is possible in RegView
+	- Load/Save items in file menue can be disabled via XML element
+	- Tables LoadAt also can work in Insert mode
+	- Crashes in RegView fixed (insert when "value" line is empty, loadat in overwrite mode)
+	- Raising of GUI elements works in all cases now. Disabled elements are marked with a red brush for 5 seconds
+	- Unified SetChecked, SetValue, SetItem, SetRBItem, SetText to "Set" command, emit errors on unknown commands and defines
+	- When an XML is loaded its path is shown in the mainwindow header
+	- Smaller bugfixes and improvements
+	- Error messages for script files added
+	- Removed dead links to resources in project file
+	- Table values can be set programmatically
+	- Bugs with output and calculation of large values fixed
+	- Several bugs in Registerview/Table fixed
+	- Assert() script command expanded for new tests
+	- Emit maths in C headerfiles with a meaningful format
+	- Emit floating point values in headerfiles with their XML format
+	- Change default "oncolor" of togglebutton to make it more readable
+
+** Improvements
+	- Missing math functions added: ceil(), random(), etc.
+
+** New Features
+	- XML parser - Check for circular lockon conditions prepared
+	- Windows 10 Scaling options for text, icons and elements supported
+	- Windows 7 scaling prepared
+	- Columns in registerview table can be hidden
+	- Option provided to close Config Wizard after Keil integration
+	- Hide the header bar if vertical space is too small
+	- Macro recorder implemented
+
+
+Version 2.0.14
+
+** Bugs
+	- Errormessage "radiobutton within a <radio>" is shown, also for combo/item
+	- Links to GUI-elements in "Comparison of current settings agaist content of file" work reliable
+	- Window size is consistent on restart
+	- xsd-files moved to main installation folder
+	- Attributes "oncolor" and "offcolor" added to UI element ToggleButton
+	- ConfigWizard version is written correctly to icwp files
+	- Get default disclaimer from application path, let user enter path if disclaimer doesn't exist
+	- Erroneous shown messages in xml validate fixed
+	- Timestamp in console messages removed
+	- Added "disclaimer.txt" to exe directory
+	- RegView Table load function corrected, LoadAt function added for Table, additional checks added
+
+** Improvements
+	- RecentDirList for ScriptsDirectory in Setting Dialog
+	- Report missing SVD/Disclaimer/Migration files on XML load
+	- Reworked/consolidated menu entries
+	
+** New Features
+	- New script command for displaying version and paths
+	- Added a recent script dir list across all ConfigWizard installations
+
+
+Version 2.0.12
+
+** Bugs
+	 - Default size & position for main window improved
+	 - All messages referring to an XML error/warning automatically position into XML file when an external editor is configured
+	 - Errormessage with "$PERIPHERAL$" improved
+	 - Script folder matching after update of Config Wizard
+	 - New UI of Config Wizard - missing Menu options added
+	 - Inconsistent version settings fixed
+	 - svd="0" was not recognized for some defines
+	 - Mixed Upper-/Lowercase extensions "XML", "ICWP" and "SCRIPT" are accepted also now
+	 - Script commands set the user value also
+	 - "Show Differences" now works reliable
+	 - $DIR$ is not stored in icwp-file anymore
+	 - $DIR$ removed from icwp-import dialog 
+	 - Editbox does not create an error message on loading xml-file 
+	 - script commands DirLoopStart/Stop now loads all xml files
+	-  Assert() works with strings also
+	 - "Diff" command shows correct values
+	 - The radiobutton UI elements are saved correctly now
+	 - RegisterView: Using Save/Load/Export buttons will set the current working directory
+	 - setDef can have variables or hex-values on its right side
+	 - Height of RegisterView-Window was wrong for some screen resolutions
+
+** New Features
+	 - Removed "About" menu, VersionString in window text
+	 - New exe name is ConfigWizard.exe, removed "Infineon" and "IFX" within the binary package
+	 - Infineon Toolbox version is shown within Config Wizards status bar
+	 - Orphaned registry entries for Keil integration are cleaned
+	 - Timestamp has been removed if output is redirected from console to output file
+
+
+Version 2.0.10
+
+** Bugs
+	 - Loading xml-file from script-file opens xml-file in same folder as script-file
+	 - After change of script directory in menu Extra->Settings, script directory is used for home icon
+	 - RegisterView: Table size is set correctly if sizepolicy="fixed;fixed" 
+	 - Loading images dynamically is working correctly
+	 - Version info displayed properly in 'About' box
+	 - Help content updated and disturbing content removed
+	 - After file error no longer a "new document" is executed
+	 - "Sign" can be executed on multiple files
+	 - Errormessage emmited when image couldn't be loaded
+
+** Improvements
+     - Layout adapted to be Toolbox conform
+	 - RegisterViewTable: Order of bitfields in tooltip are shown from MSB to LSB
+	 - RegisterView and RegisterviewTable: Binary value added to tooltip and to each combobox item
+	 - Actions checked on syntactical correctness during load
+
+** New Features
+	 - XML schema test added
+	 - setting.ini file moved to script folder
+	 - New script commands needed for testing etc. invented
+	 - XSD errors can be clicked directly in console and opened in external editor
+	 - New menu entry "Reopen XML", reloads current XML
+	 - <timer> element can call a loadFile() action
+	 - User Experience for initial start of ePower variant improved
+
+
+Version 2.0.8
+
+** Improvements
+	 - Label for curves in plot are displayed
+	 - Color for thermo bar can be set, own color if alarm threshold is exceeded
+	 
+** New Features
+	 - Register View added
+	 - Implemented mechanism to set disclaimer individually for each XML
+	 - Help content (user manual) for use in Toolbox
+
+
+Version 2.0.6
+
+** Bugs
+     - ResetGUI sets branches and lockon correctly
+     - Script command "DumpAll" works for var
+     - setDef can set value of hexspinbox
+     - plot no longer needs a define (no longer a warning is emitted)
+     - Fix for FW-Version validation (third element wasn't evaluated)
+     - Sign a file containing special character no longer makes it unusable
+     - Sign dialog shows "sign" instead of "open" if the target file is selected
+     - XML Validation: Attribute "lockon" is not allowed for "combo" and "radio"
+     - XML Validation: Count of combobox items must be within range of define
+     - USB recData string was errorneous
+     - Wizard crashed when xml or icwp is loaded via commandline and xml check finds some error
+     - When a GUI element without without svd=0 wasn´t in svd nevertheless this element couldn´t emit actions
+     - In "Unresolved Dialog" the string "$$$COLON$$$" appeared instead of a colon
+
+** Improvements
+     - Create better looking Icon for Config Wizard
+     - Avoids change of settings in comboboxes and spinboxes when scrolling the mouse wheel
+     - "Clear" command added to menu bar of output window
+     - Improved menu bar
+     - ScriptCommands can be executed from tabbed console now
+     - Added Script command for saving icwp file sorted (for testing purposes)
+
+** New Features
+     - XML-Validation: Check for valid values of range attribute
+     - DumpAll() also shows the "enabled" state
+     - Unified messages/errors/... to redirect them to console/file in order to implement a quiet mode
+     - Quiet mode implemented (command line option "-q")
+     - "Remember my decision" for Keil Integration Pop-up Window during Startup
+
+
+Version 2.0.4
+
+** Bugs
+    - Y-value of xml plot command no longer is out of visible range
+    - Switching images works correctly now
+    - "Container" field in tooltip has correct information, pseudo-defines are removed from string
+    - Define with a bitfield (mod.reg.field) does work in LED element
+    - Radio-define is working in ui-element LED
+    - Single-line edit tooltip shows string of entered text
+    - In case the define name of a math element represents a register, the value is displayed as an integer 
+    - Save, load and compare of inverted checkboxex does work
+    - Double-Lockon appearing by enable/disable branches fixed
+    - After loading XML-file output window opens only in case XML is generating header files
+    - Precision of doublespinbox is reflected in header-files and display on screen
+    - Recursive math-formulas are allowed
+    - Spelling of "setdef" is unified in "action" and usage as attribut (setDef vs. setdef))
+    - Header file no longer contains wrong defines ending with underscore 
+    - Override on comboboxes is working correctly
+    - Toggle button can be head of a branch
+    - Default precision for double-spinboxes fixed
+    - Minor features and bug fixes
+    
+** Improvements
+    - Menu "File->Export Header files" is disabled in case xml does not support header-files
+    - The content of the generated header-files is sorted alphabetically
+    - XML validation improvements on startup
+    - Binary format "%b" for math output
+    - Random tests invented to improve code stability
+    - "Settings" dialog reworked
+    - Check whether item, label or value do fit for ui-element
+    - Warning emitted to console if a "%g" format is used in math
+    - Warning emitted to console if an ui element (checkbox, radio, combo, edit, spinbox, hexspinbox, doublespinbox) lacks a "define"
+    - Warning emitted to console if a "define" is used twice
+    - Warning emitted to console if a "define" is used assigned to more than one header file
+    - If a define does not exist in svd an error is reported during load of an xml
+    - Directory path for uIO-Stick Firmware Updater is fix now to "\uIO-Stick_Firmware"
+    - "Font" attribute added to ui-elements
+    - Version numbering for xml files improved and checked on startup
+    - Version information for uIO added and checked on startup
+    - "settings.ini" invented to control several functions 
+
+** New Features
+    - Added menu item "Extra -> Update uIO..." to update uIO-Firmware added
+    - Added menu item "Extra -> Get uIO version" to check connected uIO for its installed firmware version
+    - Added menu item "Extra -> Show differences..." to show differences between two icwp files
+    - Added menu item "Extra -> Search GUI element ..." to find an ui-element via its "define" name (uses completer)
+    - Added menu items "Extra -> Expand branch/Collapse branch" to expand/collapse a branches
+    - Automatic integration into Keil µVision or via "Extra" menu
+    - Added support for version checking if XML file is released to be compatible with used Config Wizard Version
+    - New multiline edit ui-element "editbox" added
+    - ResetGUI command
+    - SW release distribution in Infineon Toolbox

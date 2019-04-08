@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.0.2">
+	<!-- <checksum>5e3e0146bb28d6577eb9e77e1d3e6c4158ceeaf6356656277a0b470232207bad</checksum> needed ? -->
+	<version label="V0.0.1"/>
+	
+	<!-- <fwversion min="*.*.*" max="*.*.*"/> needed ? --> 
+	<verticalcontainer color="255;255;255;255" sizepolicy="fixed;fixed">
+		<!-- body -->
+	</verticalcontainer>
+	
+	
+	<tabcontainer label="TLE94x1">
+		<!-- treecontainers -->
+		<treecontainer headerlabels="Structure;Settings;" label="SBC" desc="First Container" columwidths="400;250">
+			
+		</treecontainer>
+		<treecontainer headerlabels="Structure;Settings;" label="CAN" desc="High-Speed CAN FD Transceiver" columwidths="400;250">
+			<header file="port_defines.h"> <!-- needed ? -->
+				<branch label="">
+					
+				</branch>
+			</header>
+		</treecontainer>
+		<treecontainer headerlabels="Structure;Settings;" label="VCC1" desc="Voltage Regulator 1" columwidths="400;250">
+			
+		</treecontainer>
+		<treecontainer headerlabels="Structure;Settings;" label="VCC2" desc="Voltage Regulator 2" columwidths="400;250">
+		</treecontainer>
+		<treecontainer headerlabels="Structure;Settings;" label="Interrupt" desc="Interrupt Function" columwidths="400;250">
+			
+		</treecontainer>
+		
+	</tabcontainer>
+	
+</ifxmlcfg>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2015 Designer Edition 13.2.3.6018 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified"
+	 elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:include schemaLocation=".\ICW_Types.xsd"/>
+	<xs:element name="ifxmlcfg">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="checksum" type="xs:string"/>
+				<xs:element name="version" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="label" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="fwversion" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="min" type="xs:string" use="required"/>
+						<xs:attribute name="max" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="svd" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="file" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="migration" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="file" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="disclaimer" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="file" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="loadsaveallowed" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="value" type="xs:boolean"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="tabcontainer" minOccurs="0"/>
+				<xs:element ref="treecontainer" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="horizontalcontainer" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="verticalcontainer" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="absolutecontainer" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="gridcontainer" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="version" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

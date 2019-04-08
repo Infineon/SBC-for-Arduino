@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.0.3">
+	<checksum>3fa59fbf9c739bb7dfd39ac79cb8f4856ea642fb8f44283470a9a927027bcfe1</checksum>
+	<!--file ICW_TLE9278.xml                                                            -->
+	<!--brief TLE99278 MCP-SBC Configuration                                            -->
+	<!--                                                                                -->
+	<!--You can use this file under the terms of the IFX License.                       -->
+	<!--                                                                                -->
+	<!--This file is distributed in the hope that it will be useful, but WITHOUT ANY    -->
+	<!--WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR   -->
+	<!--A PARTICULAR PURPOSE. See the IFX License for more details (IFX_License.txt).   -->
+	<!--                                                                                -->
+	<!--This file may be used, copied, and distributed, with or without modification,   -->
+	<!--provided that all copyright notices are retained; that all modifications to     -->
+	<!--this file are prominently noted in the modified file; and that this paragraph   -->
+	<!--is not modified.                                                                -->
+	<!--                                                                                -->
+	<!--copyright Copyright (C) 2018 Infineon Technologies AG                           -->
+	<!--                                                                                -->
+	<!--********************************************************************************-->
+	<!--                        Author(s) Identity                                      -->
+	<!--********************************************************************************-->
+	<!-- Initials     Name                                                              -->
+	<!-- KC           Kay Claussen                                                      -->
+	<!--********************************************************************************-->
+	<!--                                                                                -->
+	<!--********************************************************************************-->
+	<!--                       Revision Control History                                 -->
+	<!--********************************************************************************-->
+	<!-- V0.0.1 2018-03-06, KC: Initial version                                         -->
+	<!-- V0.0.2 2018-03-16, KC: VBSENSE enable corrected, GUI re-aranged                -->
+	<!--                        ADC voltage and ADC source selection added              -->
+	<!-- V0.0.3 2018-08-22, KC: Watchdog checksum corrected                             -->
+	<!--                        Checkbox for "WD active in Stop Mode" removed           -->
+	<!--********************************************************************************-->
+	<version label="V0.0.3"/>
+	<fwversion min="2.2.1" max="*.*.*"/>
+	<verticalcontainer color="255;255;255;255" sizepolicy="fixed;fixed">
+		<var define="UIO.VERSION"/>
+		<var define="UIO.MAINVERSION"/>
+		<var define="UIO.SUBVERSION"/>
+		<var define="USB.ERROR_CODE"/>		<!-- Required for storing 1st byte of SPI return value (0x11) = uIO-Stick available -->
+		<var define="LED.GPIO"/>			<!-- Required for reading hardware status of all pins -->
+		<var define="CTRL.M_S_CTRL[7:6]"/>	<!-- Required for setting the Mode via buttons -->
+		<var define="CTRL.M_S_CTRL"/>		<!-- Required for read back of M_S_CTRL register via SPI and displaying mode -->
+		<var define="CTRL.SUP_STAT_1"/>
+		<var define="CTRL.SUP_STAT_0"/>
+		<var define="CTRL.THERM_STAT"/>
+		<var define="CTRL.DEV_STAT"/>
+		<var define="CTRL.BUS_STAT_0"/>
+		<var define="CTRL.WK_STAT_0"/>
+		<var define="CTRL.WK_LVL_STAT"/>
+		<var define="CTRL.WK_STAT_2"/>
+		<var define="CTRL.BUS_STAT_2"/>
+		<var define="CTRL.BUS_STAT_3"/>
+		<var define="CTRL.SMPS_STAT"/>
+		<var define="CTRL.ADC_STAT"/>
+		<var define="CTRL.FAM_PROD_STAT"/>	<!-- Required for display of product type and mode -->
+		<timer visible="false" define="INIT" interval="1" singleShot="1" run="1">
+			<action event="changed" cmd="sendUSB" data="0x01;0x13;0x55;0xAA"/>			<!-- Reset uIO to default values -->
+			<action event="changed" cmd="sendUSB" data="0x02;0x41;10"/>					<!-- SPI Baudrate 1 MHz -->
+			<action event="changed" cmd="sendUSB" data="0x02;0x42"/>					<!-- SPI: passive clock level is low, receive on rising edge -->
+			<action event="changed" cmd="sendUSB" data="0x02;0x46"/>					<!-- SPI: send MSB first -->
+			<action event="changed" cmd="sendUSB" data="0x02;0x48;0x10"/>				<!-- SPI: word length 16 bit -->
+			<action event="changed" cmd="sendUSB" data="0x06;0x10;0x01;0x00;0xB4"/>		<!-- Set SBC Watchdog trigger to 180ms -->
+			<action event="changed" cmd="sendUSB" data="0x04;0x36;0x00;20"/>			<!-- Set GPIO Read&Keep for GPIO0 with 20*100ms hold time-->
+			<action event="changed" cmd="sendUSB" data="0x04;0x36;0x01;20"/>			<!-- Set GPIO Read&Keep for GPIO1 with 20*100ms hold time -->
+			<action event="changed" cmd="sendUSB" data="0x04;0x36;0x03;20"/>			<!-- Set GPIO Read&Keep for GPIO3 with 20*100ms hold time -->
+			<action event="changed" cmd="sendUSB" data="0x01;0x10" recdata="?;?;UIO.VERSION;UIO.MAINVERSION;UIO.SUBVERSION"/>
+		</timer>
+		<timer visible="false" define="TIMER_M_S_CTRL" interval="500" singleShot="0" run="1">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x7E" recdata="?;?;CTRL.FAM_PROD_STAT"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x01" recdata="?;?;CTRL.M_S_CTRL"/>
+			<action event="changed" cmd="sendUSB" data="0x04;0x38" recdata="USB.ERROR_CODE;?;LED.GPIO"/><!-- read all GPIO pins -->
+		</timer>
+		<timer visible="false" define="TIMER_STATUS_READ" interval="500" singleShot="0" run="1">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x40" recdata="?;?;CTRL.SUP_STAT_1"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x41" recdata="?;?;CTRL.SUP_STAT_0"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x42" recdata="?;?;CTRL.THERM_STAT"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x43" recdata="?;?;CTRL.DEV_STAT"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x44" recdata="?;?;CTRL.BUS_STAT_0"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x46" recdata="?;?;CTRL.WK_STAT_0"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x48" recdata="?;?;CTRL.WK_LVL_STAT"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x49" recdata="?;?;CTRL.WK_STAT_2"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4A" recdata="?;?;CTRL.BUS_STAT_2"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4B" recdata="?;?;CTRL.BUS_STAT_3"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4C" recdata="?;?;CTRL.SMPS_STAT"/>
+			<action event="changed" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x58" recdata="?;?;CTRL.ADC_STAT"/>
+		</timer>
+		<math visible="false" define="USB.M_S_CTRL" formula="CTRL.M_S_CTRL[7:6]*0x40+CTRL.M_S_CTRL[5]*0x20+CTRL.M_S_CTRL[2]*0x04+CTRL.M_S_CTRL[1:0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.M_S_CTRL;0x81"/>
+		</math>
+		<math visible="false" define="USB.HW_CTRL_0" formula="CTRL.HW_CTRL_0[6]*0x40+CTRL.HW_CTRL_0[5]*0x20+CTRL.HW_CTRL_0[4]*0x10+CTRL.HW_CTRL_0[3]*8+CTRL.HW_CTRL_0[1]*2+CTRL.HW_CTRL_0[0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.HW_CTRL_0;0x82"/>
+		</math>
+		<math visible="false" define="USB.WD_CTRL" format="%02x" formula="(CTRL.WD_CTRL[5]+CTRL.WD_CTRL[4]+CTRL.WD_CTRL[3]+1).*1 ? 0x80+CTRL.WD_CTRL[5]*0x20+CTRL.WD_CTRL[4]*0x10+CTRL.WD_CTRL[3]*0x08+4 : CTRL.WD_CTRL[5]*0x20+CTRL.WD_CTRL[4]*0x10+CTRL.WD_CTRL[3]*0x08+4">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.WD_CTRL;0x83"/>
+		</math>
+		<math visible="false" define="USB.BUS_CTRL_0" format="%02x" formula="CTRL.BUS_CTRL_0[2:0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.BUS_CTRL_0;0x84"/>
+		</math>
+		<math visible="false" define="USB.WK_CTRL_0" format="%02x" formula="CTRL.WK_CTRL_0[6]*0x40+CTRL.WK_CTRL_0[5:4]*0x10+CTRL.WK_CTRL_0[0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.WK_CTRL_0;0x86"/>
+		</math>
+		<math visible="false" define="USB.WK_CTRL_1" format="%02x" formula="CTRL.WK_CTRL_1[0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.WK_CTRL_1;0x87"/>
+		</math>
+		<math visible="false" define="USB.WK_PUPD_CTRL" format="%02x" formula="CTRL.WK_PUPD_CTRL[1:0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.WK_PUPD_CTRL;0x88"/>
+		</math>
+		<math visible="false" define="USB.BUS_CTRL_2" format="%02x" formula="CTRL.BUS_CTRL_2[7]*0x80+CTRL.BUS_CTRL_2[6]*0x40+CTRL.BUS_CTRL_2[5:3]*0x08+CTRL.BUS_CTRL_2[2:0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.BUS_CTRL_2;0x8A"/>
+		</math>
+		<math visible="false" define="USB.BUS_CTRL_3" format="%02x" formula="CTRL.BUS_CTRL_3[4]*0x10+CTRL.BUS_CTRL_3[3]*0x08+CTRL.BUS_CTRL_3[2:0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.BUS_CTRL_3;0x8B"/>
+		</math>
+		<math visible="false" define="USB.TIMER_CTRL_0" format="%02x" formula="CTRL.TIMER_CTRL_0[2:0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.TIMER_CTRL_0;0x8C"/>
+		</math>
+		<math visible="false" define="USB.HW_CTRL_1" formula="CTRL.HW_CTRL_1[7]*0x80+CTRL.HW_CTRL_1[6]*0x40+CTRL.HW_CTRL_1[5]*0x20+CTRL.HW_CTRL_1[3:2]*4+CTRL.HW_CTRL_1[1:0]">
+			<action event="changed" cmd="sendUSB" data="0x02;0x4A;0x02;USB.HW_CTRL_1;0x8E"/>
+		</math>
+		<header file="SBC_TLE9278.h">
+			<gridcontainer columns="2">
+				<verticalcontainer>
+					<groupcontainer label="Connection Status / Signalisation Pin Status">
+						<gridcontainer columns="3">
+							<horizontalcontainer>
+								<math visible="false" define="LED.USB" formula="(USB.ERROR_CODE==0x11)?1:0"/>
+								<led data="LED.USB" bitmask="0x01" oncolor="green" offcolor="red" size="25;25"/>
+								<text label="uIO Stick connected"/>
+							</horizontalcontainer>
+							<horizontalcontainer>
+								<math visible="false" define="LED.TARGET" formula="(CTRL.FAM_PROD_STAT==0)?0:1"/>
+								<led data="LED.TARGET" bitmask="0x01" oncolor="green" offcolor="red" size="25;25"/>
+								<text label="Target IC accessable"/>
+							</horizontalcontainer>
+							<horizontalcontainer sizepolicy="fixed;fixed">
+								<text label="uIO Fimware Version:"/>
+								<math formula="UIO.VERSION"/>
+								<text label="."/>
+								<math formula="UIO.MAINVERSION"/>
+								<text label="." />
+								<math formula="UIO.SUBVERSION"/>
+							</horizontalcontainer>
+							<horizontalcontainer>
+								<led data="LED.GPIO" bitmask="0x01" oncolor="grey" offcolor="red" size="25;25"/>
+								<text label="RSTN Pin activated"/>
+							</horizontalcontainer>
+							<horizontalcontainer>
+								<led data="LED.GPIO" bitmask="0x08" oncolor="grey" offcolor="red" size="25;25"/>
+								<text label="INT Pin activated"/>
+							</horizontalcontainer>
+							<horizontalcontainer>
+								<led data="LED.GPIO" bitmask="0x02" oncolor="red" size="25;25"/>
+								<text label="FO Pin activated"/>
+							</horizontalcontainer>
+						</gridcontainer>
+					</groupcontainer>
+					<groupcontainer label="Control Function MCP-SBC">
+						<verticalcontainer>
+							<horizontalcontainer>
+								<verticalcontainer>
+									<groupcontainer label="Mode">
+										<verticalcontainer color="240;240;240">
+											<horizontalcontainer>
+												<button label="NORMAL" size="65;25">
+													<action event="clicked" cmd="setDef" data="CTRL.M_S_CTRL[7:6]=0"/>
+												</button>
+												<button label="SLEEP" size="55;25">
+													<action event="clicked" cmd="setDef" data="CTRL.M_S_CTRL[7:6]=1"/><!-- enter sleep mode -->
+													<!-- Next instruction prevents device from entering sleep mode again when accessing M_S_CTRL register -->
+													<action event="clicked" cmd="setDef" data="CTRL.M_S_CTRL[7:6]=0"/>
+													<!-- Following instructions write restart values, which are valid after exit from sleep -->
+													<action event="clicked" cmd="setDef" data="CTRL.M_S_CTRL[2]=0"/>
+													<action event="clicked" cmd="setDef" data="CTRL.HW_CTRL_0[5]=0"/>
+													<action event="clicked" cmd="setDef" data="CTRL.TIMER_CTRL_0[2:0]=0"/>
+													<action event="clicked" cmd="setDef" data="CTRL.HW_CTRL_1[5]=0"/>
+												</button>
+												<button label="STOP" size="55;25">
+													<action event="clicked" cmd="setDef" data="CTRL.M_S_CTRL[7:6]=2"/>
+												</button>
+												<button label="Soft Reset" size="70;25">
+													<action event="clicked" cmd="setDef" data="CTRL.M_S_CTRL[7:6]=3"/><!-- triggers a software reset -->
+													<action event="clicked" cmd="resetGUI"/>
+												</button>
+											</horizontalcontainer>
+											<!--In order to deteced the SLEEP mode the result of CTRL.FAM_PROD_STAT is used, because in SLEEP mode and NORMAL mode CTRL.M_S_CTRL is 0 -->
+											<math visible="false" define="LED.MODE" formula="((CTRL.M_S_CTRL.*0xC0)==0x00)*CTRL.FAM_PROD_STAT?1:((CTRL.FAM_PROD_STAT==0)?2:((CTRL.M_S_CTRL.*0xC0)==0x80?4:8))"/>
+											<!--math visible="false" define="LED.PRODUCT" formula="(CTRL.FAM_PROD_STAT==0x72)?1:0"/-->
+											<gridcontainer columns="4">
+												<led data="LED.MODE" bitmask="0x01" oncolor="green" size="17;17"/>
+												<text label="Normal         "/>
+												<led data="LED.MODE" bitmask="0x02" oncolor="green" size="17;17"/>
+												<text label="Sleep / FS"/>
+												<led data="LED.MODE" bitmask="0x04" oncolor="green" size="17;17"/>
+												<text label="Stop"/>
+												<led data="LED.MODE" bitmask="0x08" oncolor="green" size="17;17"/>
+												<text label="Soft Reset"/>
+											</gridcontainer>
+										</verticalcontainer>
+									</groupcontainer>
+								</verticalcontainer>
+								<verticalcontainer>
+									<groupcontainer label="BOOST">
+										<verticalcontainer color="240;240;240">
+											<horizontalcontainer>
+												<checkbox label="BOOST" define="CTRL.HW_CTRL_0[1]"/>
+												<combo define="CTRL.HW_CTRL_1[3:2]">
+													<item label="6.7 V"/>
+													<item label="8 V"/>
+													<item label="10 V"/>
+													<item label="12 V"/>
+												</combo>
+											</horizontalcontainer>
+										</verticalcontainer>
+									</groupcontainer>
+									<groupcontainer label="VEXT">
+										<verticalcontainer color="240;240;240">
+											<horizontalcontainer>
+												<checkbox label="VEXT" define="CTRL.M_S_CTRL[5]"/>
+												<combo define="CTRL.HW_CTRL_1[1:0]">
+													<item label="5.0 V"/>
+													<item label="3.3 V"/>
+													<item label="1.8 V"/>
+													<item label="1.2 V"/>
+												</combo>
+											</horizontalcontainer>
+										</verticalcontainer>
+									</groupcontainer>
+								</verticalcontainer>
+								<verticalcontainer>
+									<groupcontainer label="ADC / VIO">
+										<verticalcontainer color="240;240;240">
+											<horizontalcontainer>
+												<text label="ADC Result:"/>
+												<math unit="V" format="%.1f" formula="CTRL.ADC_STAT*0.15"/>
+											</horizontalcontainer>
+											<radio define="CTRL.HW_CTRL_1[7]">
+												<radiobutton label="ADC connected to WK"/>
+												<radiobutton label="ADC con. to VBSENSE"/>
+											</radio>	
+											<horizontalline size="-1;7"/>
+											<checkbox label="OV Reset active" define="CTRL.M_S_CTRL[2]"/>
+											<horizontalcontainer>
+												<text label="UV Thresh."/>
+												<combo define="CTRL.M_S_CTRL[1:0]">
+													<item label="VRT1"/>
+													<item label="VRT2"/>
+													<item label="VRT3"/>
+													<item label="VRT4"/>
+												</combo>
+											</horizontalcontainer>
+										</verticalcontainer>
+									</groupcontainer>
+								</verticalcontainer>
+							</horizontalcontainer>
+							<tabcontainer>
+								<horizontalcontainer label="CAN / Buck / BOOST / Watchdog">
+									<groupcontainer label="CAN Configuration">
+										<verticalcontainer color="240;240;240">
+											<horizontalcontainer>
+												<text label="CAN0"/>
+												<combo define="CTRL.BUS_CTRL_0[2:0]">
+													<item label="OFF"/>
+													<item label="Wake capable"/>
+													<item label="Receive only"/>
+													<item label="Normal"/>
+													<item label="Off (SWK)"/>
+													<item label="Wake cap. (SWK)"/>
+													<item label="Rec. only (SWK)"/>
+													<item label="Normal (SWK)"/>
+												</combo>
+											</horizontalcontainer>
+											<horizontalcontainer>
+												<text label="CAN1"/>
+												<combo define="CTRL.BUS_CTRL_2[2:0]">
+													<item label="OFF"/>
+													<item label="Wake capable"/>
+													<item label="Receive only"/>
+													<item label="Normal"/>
+													<item label="Off (SWK)"/>
+													<item label="Wake cap. (SWK)"/>
+													<item label="Rec. only (SWK)"/>
+													<item label="Normal (SWK)"/>
+												</combo>
+											</horizontalcontainer>
+											<horizontalcontainer>
+												<text label="CAN2"/>
+												<combo define="CTRL.BUS_CTRL_2[5:3]">
+													<item label="OFF"/>
+													<item label="Wake capable"/>
+													<item label="Receive only"/>
+													<item label="Normal"/>
+													<item label="Off (SWK)"/>
+													<item label="Wake cap. (SWK)"/>
+													<item label="Rec. only (SWK)"/>
+													<item label="Normal (SWK)"/>
+												</combo>
+											</horizontalcontainer>
+											<horizontalcontainer>
+												<text label="CAN3"/>
+												<combo define="CTRL.BUS_CTRL_3[2:0]">
+													<item label="OFF"/>
+													<item label="Wake capable"/>
+													<item label="Receive only"/>
+													<item label="Normal"/>
+													<item label="Off (SWK)"/>
+													<item label="Wake cap. (SWK)"/>
+													<item label="Rec. only (SWK)"/>
+													<item label="Normal (SWK)"/>
+												</combo>
+											</horizontalcontainer>
+											<checkbox label="CAN0 Slew Rate Control off" define="CTRL.BUS_CTRL_3[4]"/>
+											<checkbox label="CAN1 Slew Rate Control off" define="CTRL.BUS_CTRL_2[6]"/>
+											<checkbox label="CAN2 Slew Rate Control off" define="CTRL.BUS_CTRL_2[7]"/>
+											<checkbox label="CAN3 Slew Rate Control off" define="CTRL.BUS_CTRL_3[3]"/>
+										</verticalcontainer>
+									</groupcontainer>
+									<groupcontainer label="Buck / BOOST Configuration">
+										<verticalcontainer color="240;240;240">
+											<checkbox label="Autom. transition from PFM to PWM in Stop Mode" define="CTRL.HW_CTRL_0[3]" lockon="CTRL.HW_CTRL_0[4]=0"/>
+											<checkbox label="PWM of Buck Conv. enabled by WK pin" define="CTRL.HW_CTRL_0[4]"/>
+											<text label="When entering Stop Mode switch from PFM to PWM"/>
+											<radio define="CTRL.HW_CTRL_0[6]">
+												<radiobutton label="after 100 us"/>
+												<radiobutton label="after 1 ms"/>
+											</radio>
+											<horizontalline size="-1;7"/>
+											<checkbox label="Switch off BOOST on low voltage @VBSENSE" define="CTRL.HW_CTRL_1[5]"/>
+											<text/>
+										</verticalcontainer>
+									</groupcontainer>
+									<groupcontainer label="Watchdog (WD)">
+										<verticalcontainer color="240;240;240">
+											<radio define="CTRL.WD_CTRL[5]">
+												<radiobutton label="Time-out Watchdog"/>
+												<radiobutton label="Window Watchdog"/>
+											</radio>
+											<checkbox label="Start WD after CAN Wake" define="CTRL.WD_CTRL[4]" default="1"/>
+											<horizontalline size="-1;7"/>
+											<text label="After 3 consecutive WD fails:"/>
+											<radio define="CTRL.WD_CTRL[3]">
+												<radiobutton label="Continue reset generation"/>
+												<radiobutton label="Stop reset generation"/>
+											</radio>
+											<!--togglebutton define="WDT_STOP" label="Stop WDT Trigger"-->
+												<!--action event="unchecked" cmd="sendUSB" data="0x06;0x10;0x01;0x00;0xB4"/--><!-- Activate SBC Watchdog trigger -->
+												<!--action event="checked" cmd="sendUSB" data="0x06;0x10;0x00;0x00;0xB4"/--><!-- Deactivate SBC Watchdog trigger -->
+											<!--/togglebutton-->
+											<text/>
+										</verticalcontainer>
+									</groupcontainer>
+								</horizontalcontainer>
+								<horizontalcontainer label="Wake-up / Voltage Sensing / FO / RSTN">
+									<groupcontainer label="Wake-up (WK)">
+										<verticalcontainer color="240;240;240">
+											<checkbox label="Enable WK pin" define="CTRL.WK_CTRL_1[0]" default="1"/>
+											<horizontalcontainer>
+												<text label="Pull Device"/>
+												<combo label="Pull Device" define="CTRL.WK_PUPD_CTRL[1:0]">
+													<item label="None"/>
+													<item label="Pull-down"/>
+													<item label="Pull-up"/>
+													<item label="Automatic"/>
+												</combo>
+											</horizontalcontainer>
+											<horizontalline size="-1;7"/>
+											<checkbox label="Enable WK Timer" define="CTRL.WK_CTRL_0[6]"/>
+											<horizontalcontainer>
+												<text label="WK Timer Period"/>
+												<combo define="CTRL.TIMER_CTRL_0[2:0]">
+													<item label="10 ms"/>
+													<item label="20 ms"/>
+													<item label="50 ms"/>
+													<item label="100 ms"/>
+													<item label="200 ms"/>
+													<item label="1 s"/>
+													<item label="2 s"/>
+												</combo>
+											</horizontalcontainer>
+											<text/>
+											<text/>
+											<text/>
+										</verticalcontainer>
+									</groupcontainer>
+									<groupcontainer label="Voltage Sensing">
+										<verticalcontainer color="240;240;240">
+											<checkbox label="Voltage Sensing @VBSENSE" define="CTRL.WK_CTRL_0[0]"/>
+											<horizontalcontainer>
+												<text label="VB Threshold"/>
+												<combo define="CTRL.WK_CTRL_0[5:4]">
+													<item label="VBSENSE0 (highest)"/>
+													<item label="VBSENSE1"/>
+													<item label="VBSENSE2"/>
+													<item label="VBSENSE3"/>
+												</combo>
+											</horizontalcontainer>
+											<text/>
+											<text/>
+										</verticalcontainer>
+									</groupcontainer>
+									<groupcontainer label="FO / RSTN pin">
+										<verticalcontainer color="240;240;240">
+											<checkbox label="FO pin activated" define="CTRL.HW_CTRL_0[5]"/>
+											<checkbox label="FO after 1st WD trigger fail (CFG2)" define="CTRL.HW_CTRL_0[0]"/>
+											<horizontalline size="-1;7"/>
+											<checkbox label="RSTN triggered by Soft Reset" define="CTRL.HW_CTRL_1[6]" role="inverted"/>
+											<text/>
+										</verticalcontainer>
+									</groupcontainer>
+								</horizontalcontainer>
+							</tabcontainer>
+						</verticalcontainer>
+					</groupcontainer>
+				</verticalcontainer>
+				<verticalcontainer>
+					<groupcontainer label="Status">
+						<verticalcontainer>
+							<horizontalcontainer>
+								<groupcontainer label="Thermal Status">
+									<gridcontainer columns="2">
+										<led data="CTRL.THERM_STAT" bitmask="0x40" oncolor="green" size="15;15"/>
+										<text label="VCC1 OT"/>
+										<led data="CTRL.THERM_STAT" bitmask="0x20" oncolor="green" size="15;15"/>
+										<text label="BOOST OT"/>
+										<led data="CTRL.THERM_STAT" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="TSD2"/>
+										<led data="CTRL.THERM_STAT" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="TSD1"/>
+										<led data="CTRL.THERM_STAT" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="TPW"/>
+										<text/>
+										<text/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC2"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x42" recdata="USB.ERROR_CODE;?;CTRL.THERM_STAT"/>
+										</button>
+									</gridcontainer>
+								</groupcontainer>
+								<groupcontainer label="Supply Status 1">
+									<gridcontainer columns="2">
+										<led data="CTRL.SUP_STAT_1" bitmask="0x80" oncolor="green" size="15;15"/>
+										<text label="VB UV BST"/>
+										<led data="CTRL.SUP_STAT_1" bitmask="0x40" oncolor="green" size="15;15"/>
+										<text label="VS UV"/>
+										<led data="CTRL.SUP_STAT_1" bitmask="0x10" oncolor="green" size="15;15"/>
+										<text label="VEXT OC"/>
+										<led data="CTRL.SUP_STAT_1" bitmask="0x08" oncolor="green" size="15;15"/>
+										<text label="VREG UV"/>
+										<led data="CTRL.SUP_STAT_1" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="VEXT OT"/>
+										<led data="CTRL.SUP_STAT_1" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="VIO OV"/>
+										<led data="CTRL.SUP_STAT_1" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="VIO WARN"/>
+										<text/>
+										<text/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC0"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x40" recdata="USB.ERROR_CODE;?;CTRL.SUP_STAT_1"/>
+										</button>
+									</gridcontainer>
+								</groupcontainer>
+								<groupcontainer label="Supply Status 0">
+									<gridcontainer columns="2">
+										<led data="CTRL.SUP_STAT_0" bitmask="0x80" oncolor="green" size="15;15"/>
+										<text label="POR"/>
+										<led data="CTRL.SUP_STAT_0" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="VIO SC"/>
+										<led data="CTRL.SUP_STAT_0" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="VIO UV FS"/>
+										<led data="CTRL.SUP_STAT_0" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="VIO UV"/>
+										<text/>
+										<text/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC1"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x41" recdata="USB.ERROR_CODE;?;CTRL.SUP_STAT_0"/>
+										</button>
+									</gridcontainer>
+								</groupcontainer>
+								<groupcontainer label="SMPS Status">
+									<gridcontainer columns="2">
+										<led data="CTRL.SMPS_STAT" bitmask="0x80" oncolor="green" size="15;15"/>
+										<text label="BST ACT"/>
+										<led data="CTRL.SMPS_STAT" bitmask="0x40" oncolor="green" size="15;15"/>
+										<text label="BST SH"/>
+										<led data="CTRL.SMPS_STAT" bitmask="0x20" oncolor="green" size="15;15"/>
+										<text label="BST OP"/>
+										<led data="CTRL.SMPS_STAT" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="BCK SH"/>
+										<led data="CTRL.SMPS_STAT" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="BCK OP"/>
+										<text/>
+										<text/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xCC"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4C" recdata="USB.ERROR_CODE;?;CTRL.SMPS_STAT"/>
+										</button>
+									</gridcontainer>
+								</groupcontainer>
+								<groupcontainer label="Device Status">
+									<gridcontainer columns="2">
+										<led data="CTRL.DEV_STAT" bitmask="0x80" oncolor="green" size="15;15"/>
+										<text label="DEV STAT1"/>
+										<led data="CTRL.DEV_STAT" bitmask="0x40" oncolor="green" size="15;15"/>
+										<text label="DEV STAT0"/>
+										<led data="CTRL.DEV_STAT" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="SPI FAIL"/>
+										<led data="CTRL.DEV_STAT" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="FO ON"/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC3"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x43" recdata="USB.ERROR_CODE;?;CTRL.DEV_STAT"/>
+										</button>
+										<text/>
+										<text/>
+										<led data="CTRL.DEV_STAT" bitmask="0x08" oncolor="green" size="15;15"/>
+										<text label="WD FAIL1"/>
+										<led data="CTRL.DEV_STAT" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="WD FAIL0"/>
+									</gridcontainer>
+								</groupcontainer>
+							</horizontalcontainer>
+							<horizontalcontainer>
+								<groupcontainer label="Bus Status 0">
+									<gridcontainer columns="2">
+										<led data="CTRL.BUS_STAT_0" bitmask="0x10" oncolor="green" size="15;15"/>
+										<text label="CANTO0"/>
+										<led data="CTRL.BUS_STAT_0" bitmask="0x08" oncolor="green" size="15;15"/>
+										<text label="SYSERR0"/>
+										<led data="CTRL.BUS_STAT_0" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="CAN0 FAIL1"/>
+										<led data="CTRL.BUS_STAT_0" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="CAN0 FAIL0"/>
+										<led data="CTRL.BUS_STAT_0" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="VCAN UV"/>
+										<text/>
+										<text/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC4"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x44" recdata="USB.ERROR_CODE;?;CTRL.BUS_STAT_0"/>
+										</button>
+									</gridcontainer>
+								</groupcontainer>
+								<groupcontainer label="Bus Status 2">
+									<gridcontainer columns="2">
+										<led data="CTRL.BUS_STAT_2" bitmask="0x80" oncolor="green" size="15;15"/>
+										<text label="CANTO2"/>
+										<led data="CTRL.BUS_STAT_2" bitmask="0x40" oncolor="green" size="15;15"/>
+										<text label="SYSERR2"/>
+										<led data="CTRL.BUS_STAT_2" bitmask="0x20" oncolor="green" size="15;15"/>
+										<text label="CAN2 FAIL1"/>
+										<led data="CTRL.BUS_STAT_2" bitmask="0x10" oncolor="green" size="15;15"/>
+										<text label="CAN2 FAIL0"/>
+										<led data="CTRL.BUS_STAT_2" bitmask="0x08" oncolor="green" size="15;15"/>
+										<text label="CANTO1"/>
+										<led data="CTRL.BUS_STAT_2" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="SYSERR1"/>
+										<led data="CTRL.BUS_STAT_2" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="CAN1 FAIL1"/>
+										<led data="CTRL.BUS_STAT_2" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="CAN1 FAIL0"/>
+										<text/>
+										<text/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xCA"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4A" recdata="USB.ERROR_CODE;?;CTRL.BUS_STAT_2"/>
+										</button>
+									</gridcontainer>
+								</groupcontainer>
+								<groupcontainer label="Bus Status 3">
+									<gridcontainer columns="2">
+										<led data="CTRL.BUS_STAT_3" bitmask="0x08" oncolor="green" size="15;15"/>
+										<text label="CANTO3"/>
+										<led data="CTRL.BUS_STAT_3" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="SYSERR3"/>
+										<led data="CTRL.BUS_STAT_3" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="CAN3 FAIL1"/>
+										<led data="CTRL.BUS_STAT_3" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="CAN3 FAIL0"/>
+										<text/>
+										<text/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xCB"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4B" recdata="USB.ERROR_CODE;?;CTRL.BUS_STAT_3"/>
+										</button>
+									</gridcontainer>
+								</groupcontainer>
+								<groupcontainer label="Wake Level Status">
+									<gridcontainer columns="2">
+										<led data="CTRL.WK_LVL_STAT" bitmask="0x80" oncolor="green" size="15;15"/>
+										<text label="TEST"/>
+										<led data="CTRL.WK_LVL_STAT" bitmask="0x40" oncolor="green" size="15;15"/>
+										<text label="CFG1"/>
+										<led data="CTRL.WK_LVL_STAT" bitmask="0x20" oncolor="green" size="15;15"/>
+										<text label="CFG2"/>
+										<led data="CTRL.WK_LVL_STAT" bitmask="0x10" oncolor="green" size="15;15"/>
+										<text label="PCFG"/>
+										<led data="CTRL.WK_LVL_STAT" bitmask="0x08" oncolor="green" size="15;15"/>
+										<text label="VBAT UV"/>
+										<led data="CTRL.WK_LVL_STAT" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="WK"/>
+										<text/>
+										<text/>
+									</gridcontainer>
+								</groupcontainer>
+								<groupcontainer label="Wake Status 0 + 2">
+									<gridcontainer columns="2">
+										<led data="CTRL.WK_STAT_0" bitmask="0x80" oncolor="green" size="15;15"/>
+										<text label="PFM PWM"/>
+										<led data="CTRL.WK_STAT_0" bitmask="0x20" oncolor="green" size="15;15"/>
+										<text label="CAN0"/>
+										<led data="CTRL.WK_STAT_0" bitmask="0x10" oncolor="green" size="15;15"/>
+										<text label="TIMER"/>
+										<led data="CTRL.WK_STAT_0" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="WK"/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC6"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x46" recdata="USB.ERROR_CODE;?;CTRL.WK_STAT_0;?"/>
+										</button>
+										<led data="CTRL.WK_STAT_2" bitmask="0x80" oncolor="green" size="15;15"/>
+										<text label="VBAT UV"/>
+										<led data="CTRL.WK_STAT_2" bitmask="0x04" oncolor="green" size="15;15"/>
+										<text label="CAN3"/>
+										<led data="CTRL.WK_STAT_2" bitmask="0x02" oncolor="green" size="15;15"/>
+										<text label="CAN2"/>
+										<led data="CTRL.WK_STAT_2" bitmask="0x01" oncolor="green" size="15;15"/>
+										<text label="CAN1"/>
+										<text/>
+										<button label="CLEAR" size="50;25">
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC9"/>
+											<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x49" recdata="USB.ERROR_CODE;?;CTRL.WK_STAT_2"/>
+										</button>
+									</gridcontainer>
+								</groupcontainer>
+							</horizontalcontainer>
+							<horizontalcontainer>
+								<button label="CLEAR DIAGNOSTIC STATUS">
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC0"/><!-- clear SUP_STAT_1-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x40" recdata="?;?;CTRL.SUP_STAT_1"/><!-- read SUP_STAT_1-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC1"/><!-- clear SUP_STAT_0-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x41" recdata="?;?;CTRL.SUP_STAT_0"/><!-- read SUP_STAT_0-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC2"/><!-- clear THERM_STAT-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x42" recdata="?;?;CTRL.THERM_STAT"/><!-- read THERM_STAT-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC3"/><!-- clear DEV_STAT-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x43" recdata="?;?;CTRL.DEV_STAT"/><!-- read DEV_STAT-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC4"/><!-- clear BUS_STAT_0-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x44" recdata="?;?;CTRL.BUS_STAT_0"/><!-- read BUS_STAT_0-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC6"/><!-- clear WK_STAT_0-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x46" recdata="?;?;CTRL.WK_STAT_0"/><!-- read WK_STAT_0-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x48" recdata="?;?;CTRL.WK_LVL_STAT"/><!-- read WK_LVL_STAT-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xC9"/><!-- clear WK_STAT_2-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x49" recdata="?;?;CTRL.WK_STAT_2"/><!-- read WK_STAT_2-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xCA"/><!-- clear BUS_STAT_2-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4A" recdata="?;?;CTRL.BUS_STAT_2"/><!-- read BUS_STAT_2-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xCB"/><!-- clear BUS_STAT_3-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4B" recdata="?;?;CTRL.BUS_STAT_3"/><!-- read BUS_STAT_3-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xCC"/><!-- clear SMPS_STAT-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x4C" recdata="?;?;CTRL.SMPS_STAT"/><!-- read SMPS_STAT-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4A;0x02;0x00;0xD8"/><!-- clear ADC_STAT-->
+									<action event="clicked" cmd="sendUSB" data="0x02;0x4C;0x02;0x00;0x58" recdata="?;?;CTRL.ADC_STAT"/>
+								</button>
+								<togglebutton define="STATUS_REG_READ_STOP" label="STOP PERIODICAL READ OF STATUS REGISTER">
+									<action event="checked" cmd="setDef" data="TIMER_STATUS_READ.run=0"/>
+									<action event="unchecked" cmd="setDef" data="TIMER_STATUS_READ.run=1"/>
+								</togglebutton>
+							</horizontalcontainer>
+						</verticalcontainer>
+					</groupcontainer>
+				</verticalcontainer>
+			</gridcontainer>
+		</header>
+	</verticalcontainer>
+</ifxmlcfg>

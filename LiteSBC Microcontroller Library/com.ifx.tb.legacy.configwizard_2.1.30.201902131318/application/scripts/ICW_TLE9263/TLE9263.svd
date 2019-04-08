@@ -1,0 +1,3530 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--Version of used XSLT processor: 2.0 Altova GmbH http://www.altova.com-->
+<!--Version of used XSLT: ISFR2SVD.xslt  V0.10-->
+<!--Configuration of XSLT: with bit extraction =Yes;  with bit coding =Yes; decodeThe3knownBitAccessTypes = Yes; 0,r and 1,r bit extraction = No-->
+<!--Version of used XSLT for fixing SVD issues: SVD_fixes.xslt  V1.4-->
+<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.0" xs:noNamespaceSchemaLocation="c:\fm8_xml\XSLT\RD2ISFR\CMSIS-SVD_Schema_1_0.xsd">
+	<vendor>Infineon</vendor>
+	<name>TLE9263</name>
+	<version>0.2</version>
+	<description>TLE9263 Family</description>
+	<addressUnitBits>8</addressUnitBits>
+	<width>8</width>
+	<peripherals>
+		<peripheral>
+			<name>CTRL</name>
+			<description>Control</description>
+			<baseAddress>0x0000</baseAddress>
+			<addressBlock>
+				<offset>0</offset>
+				<size>0x40</size>
+				<usage>registers</usage>
+			</addressBlock>
+			<registers>
+				<register>
+					<name>M_S_CTRL</name>
+					<description>Mode- and Supply Control</description>
+					<addressOffset>1</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>MODE</name>
+							<description>SBC Mode Control</description>
+							<lsb>6</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Normal</name>
+									<description>SBC Normal Mode</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Sleep</name>
+									<description>SBC Sleep Mode</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Stop</name>
+									<description>SBC Stop Mode</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Soft_Reset</name>
+									<description>SBC Reset: Soft Reset is executed (configuration of RSTN triggering in bit SOFT_RESET_RST)</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC3_ON</name>
+							<description>VCC3 Mode Control</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>VCC3_off</name>
+									<description>VCC3 off</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>VCC3_enabled</name>
+									<description>VCC3 is enabled (as independent voltage regulator)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>					
+						<field>
+							<name>VCC2_ON</name>
+							<description>VCC2 Mode Control</description>
+							<lsb>3</lsb>
+							<msb>4</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>VCC2_off</name>
+									<description>VCC2 off</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Normal_Mode</name>
+									<description>VCC2 on in Normal Mode</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Normal_and_Stop_Mode</name>
+									<description>VCC2 on in Normal and Stop Mode</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>VCC2_always_on</name>
+									<description>VCC2 always on (except in SBC Init - if not in SBC Development Mode, SBC Restart and Fail-Safe Mode)</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC1_OV_RST</name>
+							<description>VCC1 Over Voltage leading to Restart / Fail-Safe Mode enable</description>
+							<lsb>2</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>off</name>
+									<description>VCC1_ OV is set in case of VCC1_OV; no SBC Restart or Fail-Safe is entered for VCC1_OV</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>activated</name>
+									<description>VCC1_ OV is set in case of VCC1_OV; depending on the device configuration SBC Restart or SBC Fail-Safe Mode is entered (see );</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC1_RT</name>
+							<description>VCC1 Reset Threshold Control</description>
+							<lsb>0</lsb>
+							<msb>1</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Vrt1</name>
+									<description>Vrt1 selected (highest threshold)</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Vrt2</name>
+									<description>Vrt2 selected</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Vrt3</name>
+									<description>Vrt3 selected</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Vrt4</name>
+									<description>Vrt4 selected</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>HW_CTRL</name>
+					<description>Hardware Control 0</description>
+					<addressOffset>2</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>VCC3_V_CFG</name>
+							<description>VCC3 Output Voltage Configuration (if configured as independent voltage regulator)</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>VCC3_is_same_as_VCC1</name>
+									<description>VCC3 has same output voltage as VCC1</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>3.3V_or_1.8V</name>
+									<description>VCC3 is configured to either 3.3V or 1.8V (depending on VCC1 derivative)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>SOFT_RESET_RO</name>
+							<description>Soft Reset Configuration</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>RO_triggered_by_Soft_Reset</name>
+									<description>RO will be triggered (pulled low) during a Soft Reset</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>not_triggered_by_Soft_Reset</name>
+									<description>no RO trigger during a Soft Reset</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>FO_ON</name>
+							<description>Failure Output Activation</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>off</name>
+									<description>FO not activated by software, FO will be activated by specified failures (see ) (0)</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>on</name>
+									<description>FO activated by software (via SPI), only if configured as FO (1)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC3_VS_UV_OFF</name>
+							<description>VCC3 VS_UV shutdown configuration</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>VCC3_disabled_at_VS_UV</name>
+									<description>VCC3 will be disabled automatically at VS_UV</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>VCC3_enable_below_VS_UV</name>
+									<description>VCC3 will stay enabled even below VS_UV</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC3_LS</name>
+							<description>VCC3 Configuration</description>
+							<lsb>3</lsb>
+							<msb>3</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>VCC3_as_stanalone_regulator</name>
+									<description>VCC3 operating as a stand-alone regulator</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>in_load_sharing_with_VCC1</name>
+									<description>VCC3 in load sharing operation with VCC1</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC3_LS_STP_ON</name>
+							<description>VCC3 Load Sharing in SBC Stop Mode configuration</description>
+							<lsb>1</lsb>
+							<msb>1</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>VCC3_in_LS_disabled</name>
+									<description>VCC3 in LS configuration during SBC Stop Mode and highpower mode: disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>VCC3_in_LS_enabled</name>
+									<description>VCC3 in LS configuration during SBC Stop Mode and highpower mode: enabled</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CFG</name>
+							<description>Configuration Select (see also )</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>after_2nd</name>
+									<description>Depending on hardware configuration, SBC Restart or Fail-Safe Mode is reached after the 2. watchdog trigger failure (=default) - Config 3/4</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>after_1st</name>
+									<description>Depending on hardware configuration, SBC Restart or Fail-Safe Mode is reached after the 1. watchdog trigger failure - Config 1/2</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>WD_CTRL</name>
+					<description>Watchdog Control</description>
+					<addressOffset>3</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>CHECKSUM</name>
+							<description>Watchdog Setting Check Sum Bit</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>0</name>
+									<description>Counts as 0 for checksum calculation</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>1</name>
+									<description>Counts as 1 for checksum calculation</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WD_STM_EN_0</name>
+							<description>Watchdog Deactivation during Stop Mode, bit 0 ()</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>active</name>
+									<description>Watchdog is active in Stop Mode</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>off</name>
+									<description>Watchdog is deactivated in Stop Mode</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WD_WIN</name>
+							<description>Watchdog Type Selection</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Time-out</name>
+									<description>Watchdog works as a Time-Out watchdog</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Window</name>
+									<description>Watchdog works as a Window watchdog</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WD_EN_WK_BUS</name>
+							<description>Watchdog Enable after Bus (CAN) Wake in SBC Stop Mode</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>off</name>
+									<description>Watchdog will not start after a CAN wake</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>on</name>
+									<description>Watchdog starts with a long open window after CAN Wake</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WD_TIMER</name>
+							<description>Watchdog Timer Period</description>
+							<lsb>0</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>10ms</name>
+									<description>10ms</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>20ms</name>
+									<description>20ms</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>50ms</name>
+									<description>50ms</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>100ms</name>
+									<description>100ms</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>200ms</name>
+									<description>200ms</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>500ms</name>
+									<description>500ms</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>1s</name>
+									<description>1000ms</description>
+									<value>0b110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>10s</name>
+									<description>10000ms</description>
+									<value>0b111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>BUS_CTRL_1</name>
+					<description>Bus Control</description>
+					<addressOffset>4</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>LIN_FLASH</name>
+							<description>LIN Flash Programming Mode</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>slope_control_active</name>
+									<description>Slope control mechanism active</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>deactive_at_115kBaud</name>
+									<description>Deactivation of slope control for baud rates up to 115kBaud</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>LIN_LSM</name>
+							<description>LIN Low-Slope Mode Selection</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>normal_mode</name>
+									<description>LIN Normal-Mode is activated</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>low_slope_mode</name>
+									<description>LIN Low-Slope Mode (10.4kBaud) activated</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>LIN_TXD_TO</name>
+							<description>LIN TXD Time-Out Control</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>TXD_time_out_disabled</name>
+									<description>TXD Time-Out feature disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TXD_time_out_enabled</name>
+									<description>TXD Time-Out feature enabled</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>LIN</name>
+							<description>LIN-Module Modes</description>
+							<lsb>3</lsb>
+							<msb>4</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>off</name>
+									<description>LIN OFF</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>weak_capable</name>
+									<description>LIN is wake capable</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>receive_only</name>
+									<description>LIN Receive Only Mode</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>normal</name>
+									<description>LIN Normal Mode</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CAN</name>
+							<description>HS-CAN Module Modes (CAN_2 is rw type)</description>
+							<lsb>0</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>off</name>
+									<description>CAN OFF</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>wake_capable</name>
+									<description>CAN is wake capable (no SWK)</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>receive_only</name>
+									<description>CAN Receive Only Mode (no SWK)</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>normal</name>
+									<description>CAN Normal Mode (no SWK)</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>off</name>
+									<description>CAN OFF</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>wake_capable_(SWK)</name>
+									<description>CAN is wake capable with SWK</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>receive_only_(SWK)</name>
+									<description>CAN Receive Only Mode with SWK</description>
+									<value>0b110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>normal_(SWK)</name>
+									<description>CAN Normal Mode with SWK</description>
+									<value>0b111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>BUS_CTRL_2</name>
+					<description>Bus Control</description>
+					<addressOffset>5</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>I_PEAK_TH</name>
+							<description>VCC1 Active Peak Threshold Selection</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>low_active_threshold</name>
+									<description>low VCC1 active peak threshold selected (ICC1,peak_1)</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>low_active_threshold</name>
+									<description>higher VCC1 active peak threshold selected (ICC1,peak_2)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>LIN2</name>
+							<description>LIN2-Module Modes</description>
+							<lsb>0</lsb>
+							<msb>1</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>off</name>
+									<description>LIN2 OFF</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>wake_capable</name>
+									<description>LIN2 is wake capable</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>receive_only</name>
+									<description>LIN2 Receive Only Mode</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>normal</name>
+									<description>LIN2 Normal Mode</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>WK_CTRL_1</name>
+					<description>Internal Wake Input Control</description>
+					<addressOffset>6</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>TIMER2_WK_EN</name>
+							<description>Timer2 Wake Source Control (for cyclic wake)</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>Timer2 wake disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>Timer2 is enabled as a wake source</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TIMER1_WK_EN</name>
+							<description>Timer1 Wake Source Control (for cyclic wake)</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>Timer2 wake disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>Timer2 is enabled as a wake source</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WD_STM_EN_1</name>
+							<description>Watchdog Deactivation during Stop Mode, bit 1 ()</description>
+							<lsb>2</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>WD_active_in_stop_mode</name>
+									<description>Watchdog is active in Stop Mode</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>off</name>
+									<description>Watchdog is deactivated in Stop Mode</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>WK_CTRL_2</name>
+					<description>External Wake Source Control</description>
+					<addressOffset>7</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>INT_GLOBAL</name>
+							<description>Global Interrupt Configuration (see also )</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>wake_only</name>
+									<description>Only wake sources trigger INTN (default)</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>all_status_bits</name>
+									<description>All status information register bits will trigger INTN (including all wake sources)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK_MEAS</name>
+							<description>Wake / Voltage Sensing Selection (see also )</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>wake</name>
+									<description>Wake functionality enabled for WK</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>voltage_sensing</name>
+									<description>Voltage sensing functionality enabled, no wake-up events are generated</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK3_EN</name>
+							<description>WK3 Wake Source Control</description>
+							<lsb>2</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>WK3 wake disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>WK3 is enabled as a wake source</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK2_EN</name>
+							<description>WK2 Wake Source Control</description>
+							<lsb>1</lsb>
+							<msb>1</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>WK2 wake disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>WK2 is enabled as a wake source</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK1_EN</name>
+							<description>WK1 Wake Source Control</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>WK1 wake disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>WK1 is enabled as a wake source</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>WK_PUPD_CTRL</name>
+					<description>Wake Input Level Control</description>
+					<addressOffset>8</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>WK3_PUPD</name>
+							<description>WK3 Pull-Up / Pull-Down Configuration</description>
+							<lsb>4</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>none</name>
+									<description>No pull-up / pull-down selected</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>pull-down</name>
+									<description>Pull-down resistor selected</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>pull-up</name>
+									<description>Pull-up resistor selected</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>automatic</name>
+									<description>Automatic switching to pull-up or pull-down</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK2_PUPD</name>
+							<description>WK2 Pull-Up / Pull-Down Configuration</description>
+							<lsb>2</lsb>
+							<msb>3</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>none</name>
+									<description>No pull-up / pull-down selected</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>pull-down</name>
+									<description>Pull-down resistor selected</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>pull-up</name>
+									<description>Pull-up resistor selected</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>automatic</name>
+									<description>Automatic switching to pull-up or pull-down</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK1_PUPD</name>
+							<description>WK1 Pull-Up / Pull-Down Configuration</description>
+							<lsb>0</lsb>
+							<msb>1</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>none</name>
+									<description>No pull-up / pull-down selected</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>pull-down</name>
+									<description>Pull-down resistor selected</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>pull-up</name>
+									<description>Pull-up resistor selected</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>automatic</name>
+									<description>Automatic switching to pull-up or pull-down</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>WK_FLT_CTRL</name>
+					<description>Wake Input Filter Time Control</description>
+					<addressOffset>9</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>WK3_FLT</name>
+							<description>WK3 Filter Time Configuration</description>
+							<lsb>4</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>16us</name>
+									<description>Configuration A: Filter with 16μs filter time (static sensing)</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>64us</name>
+									<description>Configuration B: Filter with 64μs filter time (static sensing)</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>16us_Timer1</name>
+									<description>Configuration C: Filtering at the end of the on-time; a filter time of 16μs (cyclic sensing) is selected, Timer1</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>16us_Timer2</name>
+									<description>Configuration D: Filtering at the end of the on-time; a filter time of 16μs (cyclic sensing) is selected, Timer2</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK2_FLT</name>
+							<description>WK2 Filter Time Configuration</description>
+							<lsb>2</lsb>
+							<msb>3</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>16us</name>
+									<description>Configuration A: Filter with 16μs filter time (static sensing)</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>64us</name>
+									<description>Configuration B: Filter with 64μs filter time (static sensing)</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>16us_Timer1</name>
+									<description>Configuration C: Filtering at the end of the on-time; a filter time of 16μs (cyclic sensing) is selected, Timer1</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>16us_Timer2</name>
+									<description>Configuration D: Filtering at the end of the on-time; a filter time of 16μs (cyclic sensing) is selected, Timer2</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK1_FLT</name>
+							<description>WK2 Filter Time Configuration</description>
+							<lsb>0</lsb>
+							<msb>1</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>16us</name>
+									<description>Configuration A: Filter with 16μs filter time (static sensing)</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>64us</name>
+									<description>Configuration B: Filter with 64μs filter time (static sensing)</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>16us_Timer1</name>
+									<description>Configuration C: Filtering at the end of the on-time; a filter time of 16μs (cyclic sensing) is selected, Timer1</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>16us_Timer2</name>
+									<description>Configuration D: Filtering at the end of the on-time; a filter time of 16μs (cyclic sensing) is selected, Timer2</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>TIMER1_CTRL</name>
+					<description>Timer1 Control and Selection</description>
+					<addressOffset>12</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>TIMER1_ON</name>
+							<description>Timer1 On-Time Configuration</description>
+							<lsb>4</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>off_(low)</name>
+									<description>OFF / Low (timer not running, HSx output is low)</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>0.1ms</name>
+									<description>0.1ms on-time</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>0.3ms</name>
+									<description>0.3ms on-time</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>1.0ms</name>
+									<description>1.0ms on-time</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>10ms</name>
+									<description>10ms on-time</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>20ms</name>
+									<description>20ms on-time</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>off_(high)</name>
+									<description>OFF / HIGH (timer not running, HSx output is high)</description>
+									<value>0b110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>reserved</name>
+									<description>reserved OFF / HIGH (timer not running, HSx output is high)</description>
+									<value>0b111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TIMER1_PER</name>
+							<description>Timer1 Period Configuration</description>
+							<lsb>0</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>10ms</name>
+									<description>10ms</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>20ms</name>
+									<description>20ms</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>50ms</name>
+									<description>50ms</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>100ms</name>
+									<description>100ms</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>200ms</name>
+									<description>200ms</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>1s</name>
+									<description>1s</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>2s</name>
+									<description>2s</description>
+									<value>0b110</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>TIMER2_CTRL</name>
+					<description>Timer2 Control and Selection</description>
+					<addressOffset>13</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>TIMER2_ON</name>
+							<description>Timer2 On-Time Configuration</description>
+							<lsb>4</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>off_(low)</name>
+									<description>OFF / Low (timer not running, HSx output is low)</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>0.1ms</name>
+									<description>0.1ms on-time</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>0.3ms</name>
+									<description>0.3ms on-time</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>1.0ms</name>
+									<description>1.0ms on-time</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>10ms</name>
+									<description>10ms on-time</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>20ms</name>
+									<description>20ms on-time</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>off_(high)</name>
+									<description>OFF / HIGH (timer not running, HSx output is high)</description>
+									<value>0b110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>reserved</name>
+									<description>reserved OFF / HIGH (timer not running, HSx output is high)</description>
+									<value>0b111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TIMER2_PER</name>
+							<description>Timer2 Period Configuration</description>
+							<lsb>0</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>10ms</name>
+									<description>10ms</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>20ms</name>
+									<description>20ms</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>50ms</name>
+									<description>50ms</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>100ms</name>
+									<description>100ms</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>200ms</name>
+									<description>200ms</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>1s</name>
+									<description>1s</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>2s</name>
+									<description>2s</description>
+									<value>0b110</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SW_SD_CTRL</name>
+					<description>Switch Shutdown Control</description>
+					<addressOffset>16</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>HS_OV_SD_EN</name>
+							<description>Shutdown Disabling of HS1...4 in case of VSHS OV</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>shutdown_enabled</name>
+									<description>shutdown enabled in case of VSHS OV</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>shutdown_disabled</name>
+									<description>shutdown disabled in case of VSHS OV</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>HS_UV_SD_EN</name>
+							<description>Shutdown Disabling of HS1...4 in case of VSHS UV</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>shutdown_enabled</name>
+									<description>shutdown enabled in case of VSHS UV</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>shutdown_disabled</name>
+									<description>shutdown disabled in case of VSHS UV</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>HS_OV_UV_REC</name>
+							<description>Switch Recovery after Removal of VSHS OV/UV for HS1...4</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Switch_recovery_disabled</name>
+									<description>Switch recovery is disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Previous_state_enabled</name>
+									<description>Previous state before VSHS OV/UV is enabled after OV/UV condition is removed</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>HS_CTRL_1</name>
+					<description>High-Side Switch Control 1</description>
+					<addressOffset>20</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>HS2</name>
+							<description>HS2 Configuration</description>
+							<lsb>4</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Off</name>
+									<description>Off</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>On</name>
+									<description>On</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_Timer1</name>
+									<description>Controlled by Timer1</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_Timer2</name>
+									<description>Controlled by Timer2</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_PWM1</name>
+									<description>Controlled by PWM1</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_PWM2</name>
+									<description>Controlled by PWM2</description>
+									<value>0b101</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>HS1</name>
+							<description>HS1 Configuration</description>
+							<lsb>0</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Off</name>
+									<description>Off</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>On</name>
+									<description>On</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_Timer1</name>
+									<description>Controlled by Timer1</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_Timer2</name>
+									<description>Controlled by Timer2</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_PWM1</name>
+									<description>Controlled by PWM1</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_PWM2</name>
+									<description>Controlled by PWM2</description>
+									<value>0b101</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>HS_CTRL_2</name>
+					<description>High-Side Switch Control 2</description>
+					<addressOffset>21</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>HS4</name>
+							<description>HS4 Configuration</description>
+							<lsb>4</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Off</name>
+									<description>Off</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>On</name>
+									<description>On</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_Timer1</name>
+									<description>Controlled by Timer1</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_Timer2</name>
+									<description>Controlled by Timer2</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_PWM1</name>
+									<description>Controlled by PWM1</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_PWM2</name>
+									<description>Controlled by PWM2</description>
+									<value>0b101</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>HS3</name>
+							<description>HS3 Configuration</description>
+							<lsb>0</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Off</name>
+									<description>Off</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>On</name>
+									<description>On</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_Timer1</name>
+									<description>Controlled by Timer1</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_Timer2</name>
+									<description>Controlled by Timer2</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_PWM1</name>
+									<description>Controlled by PWM1</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Controlled_by_PWM2</name>
+									<description>Controlled by PWM2</description>
+									<value>0b101</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>GPIO_CTRL</name>
+					<description>GPIO Configuration Control</description>
+					<addressOffset>23</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>FO_DC</name>
+							<description>Duty Cycle Configuration of FO3 (if selected)</description>
+							<lsb>6</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>20%</name>
+									<description>20%</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>10%</name>
+									<description>10%</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>5%</name>
+									<description>5%</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>2.5%</name>
+									<description>2.5%</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>GPIO2</name>
+							<description>GPIO2 Configuration</description>
+							<lsb>3</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>FO3</name>
+									<description>FO3 selected</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>FO3</name>
+									<description>FO3 selected</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>FO3</name>
+									<description>FO3 selected</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>FO3</name>
+									<description>FO3 selected</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>OFF</name>
+									<description>OFF</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Wake_input</name>
+									<description>Wake input enabled (16us static filter)</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Low-Side_PWM</name>
+									<description>Low-Side Switch ON</description>
+									<value>0b110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>High-Side_PWM</name>
+									<description>High-Side Switch ON</description>
+									<value>0b111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>GPIO1</name>
+							<description>GPIO1 Configuration</description>
+							<lsb>0</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>FO2</name>
+									<description>FO2 selected</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>FO2</name>
+									<description>FO2 selected</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>FO2</name>
+									<description>FO2 selected</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>FO2</name>
+									<description>FO2 selected</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>OFF</name>
+									<description>OFF</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Wake_input</name>
+									<description>Wake input enabled (16us static filter)</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Low-Side_PWM</name>
+									<description>Low-Side Switch ON</description>
+									<value>0b110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>High-Side_PWM</name>
+									<description>High-Side Switch ON</description>
+									<value>0b111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>PWM1_CTRL</name>
+					<description>PWM1 Configuration Control</description>
+					<addressOffset>24</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>PWM1_DC</name>
+							<description>PWM1 Duty Cycle (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>PWM2_CTRL</name>
+					<description>PWM2 Configuration Control</description>
+					<addressOffset>25</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>PWM2_DC</name>
+							<description>PWM2 Duty Cycle (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>PWM_FREQ_CTRL</name>
+					<description>PWM Frequency Configuration Control</description>
+					<addressOffset>28</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>PWM2_FREQ</name>
+							<description>PWM2 Frequency Selection</description>
+							<lsb>2</lsb>
+							<msb>2</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>200Hz</name>
+									<description>200Hz configuration</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>400Hz</name>
+									<description>400Hz configuration</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>PWM1_FREQ</name>
+							<description>PWM1 Frequency Selection</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>200Hz</name>
+									<description>200Hz configuration</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>400Hz</name>
+									<description>400Hz configuration</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SYS_STATUS_CTRL</name>
+					<description>System Status Control</description>
+					<addressOffset>30</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>SYS_STAT</name>
+							<description>System Status Control Byte (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_CTRL</name>
+					<description>CAN Selective Wake Control</description>
+					<addressOffset>32</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>OSC_CAL</name>
+							<description>Oscillator Calibration Mode</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>Oscillator Calibration is disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>Oscillator Calibration is enabled</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TRIM_EN</name>
+							<description>(Un)locking mechanism of oscillator recalibration</description>
+							<lsb>5</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>locked_0</name>
+									<description>locked</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>locked_1</name>
+									<description>locked</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>locked_2</name>
+									<description>locked</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>unlocked</name>
+									<description>unlocked</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CANTO_MASK</name>
+							<description>CAN Time Out Masking</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>no_INTN</name>
+									<description>CAN time-out is masked - no interrupt (on pin INTN) is triggered</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>INTN</name>
+									<description>CAN time-out is signaled on INTN</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CFG_VAL</name>
+							<description>SWK Configuration valid</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_valid</name>
+									<description>Configuration is not valid (SWK not possible)</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>valid</name>
+									<description>SWK configuration valid, needs to be set to enable SWK</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_BTL0_CTRL</name>
+					<description>SWK Bit Timing Logic Control1</description>
+					<addressOffset>33</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>TBIT</name>
+							<description>Number of Time Quanta in a Bit Time</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_BTL1_CTRL</name>
+					<description>SWK Bit Timing Control2</description>
+					<addressOffset>34</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>SP</name>
+							<description>Sampling Point Position</description>
+							<lsb>0</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_ID3_CTRL</name>
+					<description>SWK WUF Identifier bits 28...21</description>
+					<addressOffset>35</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>ID28_21</name>
+							<description>WUF Identifier Bits 28...21</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_ID2_CTRL</name>
+					<description>SWK WUF Identifier bits 20...13</description>
+					<addressOffset>36</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>ID20_13</name>
+							<description>WUF Identifier Bits 20...13</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_ID1_CTRL</name>
+					<description>SWK WUF Identifier bits 12...5</description>
+					<addressOffset>37</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>ID12_5</name>
+							<description>WUF Identifier Bits 12...5</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_ID0_CTRL</name>
+					<description>SWK WUF Identifier bits 4...0</description>
+					<addressOffset>38</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>ID4_0</name>
+							<description>WUF Identifier Bits 4..0</description>
+							<lsb>2</lsb>
+							<msb>6</msb>
+							<access>read-write</access>							
+							<enumeratedValues>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>RTR</name>
+							<description>Remote Transmission Request Field (acc. ISO 11898-1)</description>
+							<lsb>1</lsb>
+							<msb>1</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>Normal Data Frame</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>Remote Transmission Request</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>IDE</name>
+							<description>Identifier Extension Bit</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>11bit</name>
+									<description>Standard Identifier Length (11 bit)</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>29bit</name>
+									<description>Extended Identifier Length (29 bit)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_MASK_ID3_CTRL</name>
+					<description>SWK WUF Identifier Mask bits 28...21</description>
+					<addressOffset>39</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>MASK_ID28_21</name>
+							<description>WUF Identifier Mask Bits 28...21</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>ignored</name>
+									<description>Unmasked - bit is ignored</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>Masked - bit is compared in CAN frame</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_MASK_ID2_CTRL</name>
+					<description>SWK WUF Identifier Mask bits 20...13</description>
+					<addressOffset>40</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>MASK_ID20_13</name>
+							<description>WUF Identifier Mask Bits 20...13</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>ignored</name>
+									<description>Unmasked - bit is ignored</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>Masked - bit is compared in CAN frame</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_MASK_ID1_CTRL</name>
+					<description>SWK WUF Identifier Mask bits 12...5</description>
+					<addressOffset>41</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>MASK_ID12_5</name>
+							<description>WUF Identifier Mask Bits 12...5</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>ignored</name>
+									<description>Unmasked - bit is ignored</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>Masked - bit is compared in CAN frame</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_MASK_ID0_CTRL</name>
+					<description>SWK WUF Identifier bits 4...0</description>
+					<addressOffset>42</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>MASK_ID4_0</name>
+							<description>WUF Identifier MASK Bits 4..0</description>
+							<lsb>2</lsb>
+							<msb>6</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>irgnored</name>
+									<description>Unmasked - bit is ignored</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>Masked - bit is compared in CAN frame</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DLC_CTRL</name>
+					<description>SWK Frame Data Length Code Control</description>
+					<addressOffset>43</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DLC</name>
+							<description>Payload length in number of bytes</description>
+							<lsb>0</lsb>
+							<msb>3</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>0</name>
+									<description>Frame Data Length = 0 or cleared</description>
+									<value>0b0000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>1</name>
+									<description>Frame Data Length = 1</description>
+									<value>0b0001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>2</name>
+									<description>Frame Data Length = 2</description>
+									<value>0b0010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>3</name>
+									<description>Frame Data Length = 3</description>
+									<value>0b0011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>4</name>
+									<description>Frame Data Length = 4</description>
+									<value>0b0100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>5</name>
+									<description>Frame Data Length = 5</description>
+									<value>0b0101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>6</name>
+									<description>Frame Data Length = 6</description>
+									<value>0b0110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>7</name>
+									<description>Frame Data Length = 7</description>
+									<value>0b0111</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>8</name>
+									<description>Frame Data Length = 8</description>
+									<value>0b1000</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DATA7_CTRL</name>
+					<description>SWK Data7 Register</description>
+					<addressOffset>44</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DATA7</name>
+							<description>Data7 byte content(bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DATA6_CTRL</name>
+					<description>SWK Data6 Register</description>
+					<addressOffset>45</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DATA6</name>
+							<description>Data6 byte content (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DATA5_CTRL</name>
+					<description>SWK Data5 Register</description>
+					<addressOffset>46</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DATA5</name>
+							<description>Data5 byte content (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DATA4_CTRL</name>
+					<description>SWK Data4 Register</description>
+					<addressOffset>47</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DATA4</name>
+							<description>Data4 byte content (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DATA3_CTRL</name>
+					<description>SWK Data3 Register</description>
+					<addressOffset>48</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DATA3</name>
+							<description>Data3 byte content (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DATA2_CTRL</name>
+					<description>SWK Data2 Register</description>
+					<addressOffset>49</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DATA2</name>
+							<description>Data2 byte content (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DATA1_CTRL</name>
+					<description>SWK Data1 Register</description>
+					<addressOffset>50</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DATA1</name>
+							<description>Data1 byte content (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_DATA0_CTRL</name>
+					<description>SWK Data0 Register</description>
+					<addressOffset>51</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DATA0</name>
+							<description>Data0 byte content (bit0=LSB; bit7=MSB)</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_CAN_FD_CTRL</name>
+					<description>CAN FD Configuration Control Register</description>
+					<addressOffset>52</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DIS_ERR_CNT</name>
+							<description>Error Counter Disable Function</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>counter_enabled</name>
+									<description>Error Counter is enabled during SWK</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>counter_disabled</name>
+									<description>Error counter is disabled during SWK only if CAN_FD_EN = ‘1'</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>RX_FILT_BYP</name>
+							<description>RX Receiver Filter Bypass</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>RX Filter not bypassed</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>RX Filter bypassed</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>FD_FILTER</name>
+							<description>CAN FD Dominant Filter Time</description>
+							<lsb>1</lsb>
+							<msb>3</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>50ns</name>
+									<description>50 ns</description>
+									<value>0b000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>100ns</name>
+									<description>100 ns</description>
+									<value>0b001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>150ns</name>
+									<description>150 ns</description>
+									<value>0b010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>200ns</name>
+									<description>200 ns</description>
+									<value>0b011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>250ns</name>
+									<description>250 ns</description>
+									<value>0b100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>300ns</name>
+									<description>300 ns</description>
+									<value>0b101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>350ns</name>
+									<description>350 ns</description>
+									<value>0b110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>700ns</name>
+									<description>700 ns</description>
+									<value>0b111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CAN_FD_EN</name>
+							<description>CAN FD Tolerant Mode</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>CAN FD Tolerant Mode disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>CAN FD Tolerant Mode enabled</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_OSC_TRIM_CTRL</name>
+					<description>SWK Oscillator Trimming Register</description>
+					<addressOffset>56</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>TRIM_OSC</name>
+							<description>Oscillator trimming (bit0=LSB; bit7=MSB); (only writable if TRIM_EN = ‘11')</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+							</enumeratedValues>							
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_OPT_CTRL</name>
+					<description>Selective Wake Options Register</description>
+					<addressOffset>57</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>RX_WK_SEL</name>
+							<description>SWK Receiver selection (only accessible if TRIM_EN = ‘11')</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>Low-Power_Receiver</name>
+									<description>Low-Power Receiver selected during SWK</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Standard_Receiver</name>
+									<description>Standard Receiver selected during SWK</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TRIM_OSC</name>
+							<description>Oscillator trimming (bit8=LSB; bit12=MSB); (only writable if TRIM_EN = ‘11')</description>
+							<lsb>0</lsb>
+							<msb>4</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_OSC_CAL_H_STAT</name>
+					<description>SWK Oscillator Calibration High Register</description>
+					<addressOffset>58</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>OSC_CAL_H</name>
+							<description>Oscillator Calibration High Register</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-only</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_OSC_CAL_L_STAT</name>
+					<description>SWK Oscillator Calibration Low Register</description>
+					<addressOffset>59</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>OSC_CAL_L</name>
+							<description>Oscillator Calibration Low Register</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-only</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_CDR_CTRL1</name>
+					<description>CDR Control 1 Register</description>
+					<addressOffset>60</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>SEL_FILT</name>
+							<description>Select Time Constant of Filter</description>
+							<lsb>2</lsb>
+							<msb>3</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>8</name>
+									<description>Time constant 8</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>16(default)</name>
+									<description>Time constant 16 (default)</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>32</name>
+									<description>Time constant 32</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>adaptive</name>
+									<description>adapt distance between falling edges 2, 3 bit: Time constant 32 distance between f. edges 4, 5, 6, 7, 8 bit: Time constant 16 distance between falling edges 9, 10 bit: Time constant 8</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CDR_EN</name>
+							<description>Enable CDR</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>disabled</name>
+									<description>CDR disabled</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>enabled</name>
+									<description>CDR enabled</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_CDR_CTRL2</name>
+					<description>CDR Control 2Register</description>
+					<addressOffset>61</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>SEL_OSC_CLK</name>
+							<description>Input Frequency for CDR module</description>
+							<lsb>0</lsb>
+							<msb>1</msb>
+							<access>read-write</access>
+							<enumeratedValues>
+							</enumeratedValues>							
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_CDR_LIMIT_HIGH_CTRL</name>
+					<description>SWK CDR Upper Limit Control</description>
+					<addressOffset>62</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>CDR_LIM_H</name>
+							<description>Upper Bit Time Detection Range of Clock and Data Recovery</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_CDR_LIMIT_LOW_CTRL</name>
+					<description>SWK CDR Lower Limit Control</description>
+					<addressOffset>63</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>CDR_LIM_L</name>
+							<description>Lower Bit Time Detection Range of Clock and Data Recovery</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-write</access>
+						</field>
+					</fields>
+				</register>
+			</registers>
+		</peripheral>
+		<peripheral>
+			<name>STAT</name>
+			<description>Status</description>
+			<baseAddress>0b1000000</baseAddress>
+			<addressBlock>
+				<offset>0</offset>
+				<size>0x40</size>
+				<usage>registers</usage>
+			</addressBlock>
+			<registers>
+				<register>
+					<name>SUP_STAT_1</name>
+					<description>Supply Voltage Fail Status</description>
+					<addressOffset>0</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>VS_UV</name>
+							<description>VS Undervoltage Detection (VS,UV)</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No VS undervoltage detected</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>VS undervoltage detected (detection is only active when VCC1 is enabled - see also note below)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VS_OV</name>
+							<description>VS Overvoltage Detection (VS,UV)</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No VS overvoltage detected</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected (1)</name>
+									<description>VS overvoltage detected (detection is only active when VCC1 is enabled - see also note below)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC1_OV</name>
+							<description>VCC1 Overvoltage Detection ()</description>
+							<lsb>1</lsb>
+							<msb>1</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No VCC1 overvoltage warning</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>VCC1 overvoltage detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC1_WARN</name>
+							<description>VCC1 Undervoltage Prewarning ()</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No VCC1 undervoltage prewarning</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>VCC1 undervoltage prewarning detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SUP_STAT_0</name>
+					<description>Supply Voltage Fail Status</description>
+					<addressOffset>1</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>POR</name>
+							<description>Power-On Reset Detection</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No POR</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>POR occurred</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC2_OT</name>
+							<description>VCC2 Over Temperature Detection</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No over temperature</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>VCC2 over temperature detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC2_UV</name>
+							<description>VCC2 Under Voltage Detection ()</description>
+							<lsb>3</lsb>
+							<msb>3</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No VCC2 Under voltage</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>VCC2 under voltage detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC1_SC</name>
+							<description>VCC1 Short to GND Detection (&lt;Vrtx for t&gt;2ms after switch on)</description>
+							<lsb>2</lsb>
+							<msb>2</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No short</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>VCC1 short to GND detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCC1_UV</name>
+							<description>VCC1 UV-Detection (due to Vrtx reset)</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No VCC1_UV detection</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>VCC1 UV-Fail detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>THERM_STAT</name>
+					<description>Thermal Protection Status</description>
+					<addressOffset>2</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>TSD2_SAFE</name>
+							<description>TSD2 Thermal Shut-Down Safe State Detection</description>
+							<lsb>3</lsb>
+							<msb>3</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No TSD2 safe state detected</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>TSD2 safe state detected: &gt;16 consecutive TSD2 events occurred, next TSD2 waiting time will be 60s</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TSD2</name>
+							<description>TSD2 Thermal Shut-Down Detection</description>
+							<lsb>2</lsb>
+							<msb>2</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No TSD2 event</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>TSD2 OT detected - leading to SBC Fail-Safe Mode</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TSD1</name>
+							<description>TSD1 Thermal Shut-Down Detection</description>
+							<lsb>1</lsb>
+							<msb>1</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No TSD1 fail</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>TSD1 OT detected (affected module is disabled)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TPW</name>
+							<description>Thermal Pre Warning</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No Thermal Pre warning</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>Thermal Pre warning detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>DEV_STAT</name>
+					<description>Device Information Status</description>
+					<addressOffset>3</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>DEV_STAT</name>
+							<description>Device Status before Restart Mode</description>
+							<lsb>6</lsb>
+							<msb>7</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>cleared</name>
+									<description>Cleared (Register must be actively cleared)</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>failure</name>
+									<description>Restart due to failure (WD fail, TSD2, VCC1_UV, trial to access SLEEP MODE without any wake source activated); also after a wake from Fail-Safe Mode</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Sleep_Mode</name>
+									<description>Sleep Mode</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>reserved</name>
+									<description>Reserved</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WD_FAIL</name>
+							<description>Number of WD-Failure Events (1/2 WD failures depending on CFG1)</description>
+							<lsb>2</lsb>
+							<msb>3</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No WD Fail</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>1</name>
+									<description>1x WD Fail, FO activation - Config 2 selected</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>2</name>
+									<description>2x WD Fail, FO activation - Config 1 / 3 / 4 selected</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>reserved</name>
+									<description>Reserved (never reached)</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>SPI_FAIL</name>
+							<description>SPI Fail Information</description>
+							<lsb>1</lsb>
+							<msb>1</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No SPI fail</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>Invalid SPI command detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>FAILURE</name>
+							<description>Activation of Fail Output FO</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No Failure</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>Failure occurred</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>BUS_STAT1</name>
+					<description>Bus Communication Status</description>
+					<addressOffset>4</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>LIN1_FAIL</name>
+							<description>LIN1 Failure Status</description>
+							<lsb>5</lsb>
+							<msb>6</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>No error</name>
+									<description>No error</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>LIN1 TSD</name>
+									<description>LIN1 TSD</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>LIN1_TXD_DOM</name>
+									<description>TXD dominant time out for more than 20ms</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>LIN1_BUS_DOM</name>
+									<description>BUS dominant time out for more than 20ms</description>
+									<value>0b11</value>
+								</enumeratedValue>							
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CANTO</name>
+							<description>CAN Time Out Detection</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>Normal operation</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>CAN Time Out detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>SYSERR</name>
+							<description>SWK System Error</description>
+							<lsb>3</lsb>
+							<msb>3</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>Selective Wake Mode is possible</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>System Error detected, SWK enabling not possible</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CAN_FAIL</name>
+							<description>CAN Failure Status</description>
+							<lsb>1</lsb>
+							<msb>2</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>none</name>
+									<description>No error</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TSD_shutdown</name>
+									<description>CAN TSD shutdown</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TXD_DOM</name>
+									<description>CAN_TXD_DOM: TXD dominant time out detected ()</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>BUS_DOM</name>
+									<description>CAN_BUS_DOM: BUS dominant time out detected ()</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>VCAN_UV</name>
+							<description>Undervoltage CAN Bus Supply</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>Normal operation</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>CAN Supply undervoltage detected. Transmitter disabled</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>BUS_STAT2</name>
+					<description>Bus Communication Status</description>
+					<addressOffset>5</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>LIN2_FAIL</name>
+							<description>LIN2 Failure Status</description>
+							<lsb>1</lsb>
+							<msb>2</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>No_error</name>
+									<description>No error</description>
+									<value>0b00</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>LIN2_TSD_shutdown</name>
+									<description>LIN2 TSD shutdown</description>
+									<value>0b01</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>LIN2_TXD_DOM</name>
+									<description>TXD dominant time out for more than 20ms</description>
+									<value>0b10</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>LIN2_BUS_DOM</name>
+									<description>BUS dominant time out for more than 20ms</description>
+									<value>0b11</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>WK_STAT_0</name>
+					<description>Wake-up Source and Information Status 0</description>
+					<addressOffset>6</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>CAN_WU</name>
+							<description>Wake up via CAN Bus</description>
+							<lsb>5</lsb>
+							<msb>5</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No Wake up</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>Wake up</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>TIMER_WU</name>
+							<description>Wake up via TimerX</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No Wake up</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>Wake up</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK_WU</name>
+							<description>Wake up via WK</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No Wake up</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>Wake up</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>WK_STAT_1</name>
+					<description>Wake-up Source and Information Status 1</description>
+					<addressOffset>7</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>GPIO_WK_WU</name>
+							<description>Wake up via GPIO if configured as WK</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No Wake up</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>Wake up</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>WK_LVL_STAT</name>
+					<description>WK Input Level</description>
+					<addressOffset>8</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>SBC_DEV_LVL</name>
+							<description>Status of SBC Operating Mode at TEST Pin</description>
+							<lsb>7</lsb>
+							<msb>7</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>User-Mode</name>
+									<description>User Mode activated</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Development-Mode</name>
+									<description>SBC Development Mode activated</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CFG0_STATE</name>
+							<description>Device Configuration Status on pin INTN</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>No_ext._Pull-up_Resisitor</name>
+									<description>No external pull-up resistor connected on INTN (Config 2/4)</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>Ext._Pull-up_Resisitor</name>
+									<description>External pull-up resistor connected on INTN (Config 1/3)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>GPIO_LVL</name>
+							<description>Status of GPIO if configured as GPIO (WK, LS or HS function)</description>
+							<lsb>4</lsb>
+							<msb>4</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>low_level</name>
+									<description>Low Level (=0)</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>high_level</name>
+									<description>High Level (=1)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WK_LVL</name>
+							<description>Status of WK</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>low_level</name>
+									<description>Low Level (=0)</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>high_level</name>
+									<description>High Level (=1)</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>GPIO_OC_STAT</name>
+					<description>GPIO Overcurrent Status</description>
+					<addressOffset>20</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>GPIO_OC</name>
+							<description>Overcurrent Detection on GPIO (if configured as LS or HS)</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No OC</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>OC detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>GPIO_OL_STAT</name>
+					<description>GPIO Open-Load Status</description>
+					<addressOffset>21</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>GPIO_OL</name>
+							<description>Open-Load Detection on GPIO (if configured as HS)</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No OL</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>OL detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_STAT</name>
+					<description>Selective Wake Status</description>
+					<addressOffset>48</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>SYNC</name>
+							<description>Synchronisation (at least one CAN frame without fail must have been received)</description>
+							<lsb>6</lsb>
+							<msb>6</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>failed</name>
+									<description>SWK function not working or not synchronous to CAN bus</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>valid</name>
+									<description>Valid CAN frame received, SWK function is synchronous to CAN bus</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>CANSIL</name>
+							<description>CAN Silent Time during SWK operation</description>
+							<lsb>3</lsb>
+							<msb>3</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_exceeded</name>
+									<description>tsilence not exceeded</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>exceeded</name>
+									<description>set if tsilence is exceeded.</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>SWK_SET</name>
+							<description>Selective Wake Activity</description>
+							<lsb>2</lsb>
+							<msb>2</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_activated</name>
+									<description>Selective Wake is not active</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>activated</name>
+									<description>Selective Wake is activated</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WUP</name>
+							<description>Wake-up Pattern Detection</description>
+							<lsb>1</lsb>
+							<msb>1</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No WUP</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>WUP detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>WUF</name>
+							<description>SWK Wake-up Frame Detection (acc. ISO 11898-6)</description>
+							<lsb>0</lsb>
+							<msb>0</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>not_detected</name>
+									<description>No WUF</description>
+									<value>0b0</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>detected</name>
+									<description>WUF detected</description>
+									<value>0b1</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_ECNT_STAT</name>
+					<description>SWK Status</description>
+					<addressOffset>49</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>ECNT</name>
+							<description>SWK CAN Frame Error Counter</description>
+							<lsb>0</lsb>
+							<msb>5</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>0</name>
+									<description>No Frame Error</description>
+									<value>0b000000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>31</name>
+									<description>31 Frame Errors have been counted</description>
+									<value>0b011111</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>overflow</name>
+									<description>Error counter overflow - SWK function will be disabled</description>
+									<value>0b100000</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_CDR_STAT1</name>
+					<description>CDR Status 1 Register</description>
+					<addressOffset>50</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>NAVG_SAT</name>
+							<description>Output Value from Filter Block</description>
+							<lsb>0</lsb>
+							<msb>7</msb>
+							<access>read-only</access>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>SWK_CDR_STAT2</name>
+					<description>CDR Status 2 Register</description>
+					<addressOffset>51</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>NAVG_SAT</name>
+							<description>Output Value from Filter Block</description>
+							<lsb>4</lsb>
+							<msb>7</msb>
+							<access>read-only</access>
+							<enumeratedValues>							
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+				<register>
+					<name>FAM_PROD_STAT</name>
+					<description>Family and Product Identification Register</description>
+					<addressOffset>62</addressOffset>
+					<size>8</size>
+					<fields>
+						<field>
+							<name>FAM</name>
+							<description>SBC Family Identifier (bit4=LSB; bit7=MSB)</description>
+							<lsb>4</lsb>
+							<msb>7</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>HERA</name>
+									<description>Driver SBC Family (HERA)</description>
+									<value>0b0001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>HERCULES</name>
+									<description>DC/DC-SBC Family (HERCULES)</description>
+									<value>0b0010</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>ATHENA</name>
+									<description>Mid-Range SBC Family (ATHENA)</description>
+									<value>0b0011</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>MCP</name>
+									<description>Multi-CAN SBC Family (MCP)</description>
+									<value>0b0100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>LITE</name>
+									<description>LITE SBC Family (LITE)</description>
+									<value>0b0101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>ATHENA+</name>
+									<description>Mid-Range+ SBC Family (ATHENA+)</description>
+									<value>0b0111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+						<field>
+							<name>PROD</name>
+							<description>SBC Product Identifier (bit0=LSB; bit3=MSB)</description>
+							<lsb>0</lsb>
+							<msb>3</msb>
+							<access>read-only</access>
+							<enumeratedValues>
+								<enumeratedValue>
+									<name>reserved_0</name>
+									<description>reserved</description>
+									<value>0b0000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>reserved_1</name>
+									<description>reserved</description>
+									<value>0b0001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TLE9461ES</name>
+									<description>TLE9461ES (VCC1 = 5V, no SWK)</description>
+									<value>0b0100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TLE9461ESV33</name>
+									<description>TLE9461ESV33 (VCC1 = 3.3V, no SWK)</description>
+									<value>0b0101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TLE9461-3ES</name>
+									<description>TLE9461-3ES (VCC1 = 5V, SWK) (default value if device is not fused)</description>
+									<value>0b0110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TLE9461-3ESV33</name>
+									<description>TLE9461-3ESV33 (VCC1 = 3.3V, SWK)</description>
+									<value>0b0111</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>reserved_8</name>
+									<description>reserved</description>
+									<value>0b1000</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>reserved_9</name>
+									<description>reserved</description>
+									<value>0b1001</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TLE9471ES</name>
+									<description>TLE9471ES (VCC1 = 5V, no SWK)</description>
+									<value>0b1100</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TLE9471ESV33</name>
+									<description>TLE9471ESV33 (VCC1 = 3.3V, no SWK)</description>
+									<value>0b1101</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TLE9471-3ES</name>
+									<description>TLE9471-3ES(VCC1 = 5V, SWK)</description>
+									<value>0b1110</value>
+								</enumeratedValue>
+								<enumeratedValue>
+									<name>TLE9471-3ESV33</name>
+									<description>TLE9471-3ESV33 (VCC1 = 3.3V, SWK)</description>
+									<value>0b1111</value>
+								</enumeratedValue>
+							</enumeratedValues>
+						</field>
+					</fields>
+				</register>
+			</registers>
+		</peripheral>
+	</peripherals>
+</device>

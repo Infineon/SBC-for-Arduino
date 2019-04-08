@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.1.17">
+    <checksum>f4a76e6d4b514b02d507cec733a8830c27cb27777b1434a5070951d285ced8e5</checksum>
+    <version label=""/>
+    <disclaimer file="disclaimer.txt"/>
+    <loadsaveallowed value="1"/>
+    <verticalcontainer>
+      <timer define="TIMER" run="1" singleShot="0" interval="800">
+        <action cond="(TIMER%2)==0" event="changed" cmd="setDef" data="BLINKBUTTON.color=0xFF0000;BLINKTOGGLEBUTTON.color=0xFF0000"/>
+        <action cond="(TIMER%2)==1" event="changed" cmd="setDef" data="BLINKBUTTON.color=0x00FF00;BLINKTOGGLEBUTTON.color=0x00FF00"/>
+      </timer>
+        <groupcontainer>
+            <verticalcontainer>
+                <checkbox define="CHECKBOX.EXTENDED" label="Extended"/>
+                <horizontalcontainer>
+                    <text define="Text1" label="Address:"/>
+                    <edit define="LINE_EDIT" numeric="1" validator="^0x[0-9A-F]{6}$"/>
+                    <edit define="EDIT.WARNING" readonly="1" default="OK" color="0xFF;0;0"/>
+                    <math visible="false" formula="LINE_EDIT+CHECKBOX.EXTENDED">
+                      <action cond="CHECKBOX.EXTENDED==0 &amp; LINE_EDIT > 0x0FFF" event="changed" cmd="setDef" data="EDIT.WARNING=Must be &lt; 0x0FFF;EDIT.WARNING.color=0xFF0000"/>
+                      <action cond="CHECKBOX.EXTENDED==0 &amp; LINE_EDIT &lt;= 0x0FFF" event="changed" cmd="setDef" data="EDIT.WARNING= ;EDIT.WARNING.color=0x00FF00"/>
+                      <action cond="CHECKBOX.EXTENDED==1 &amp; LINE_EDIT > 0xFFFF" event="changed" cmd="setDef" data="EDIT.WARNING=Must be &lt; 0xFFFF;EDIT.WARNING.color=0xFF0000"/>
+                      <action cond="CHECKBOX.EXTENDED==1 &amp; LINE_EDIT &lt;= 0xFFFF" event="changed" cmd="setDef" data="EDIT.WARNING= ;EDIT.WARNING.color=0x00FF00"/>
+                    </math>
+                  <button define="BLINKBUTTON" label="Copy file">
+                    <action event="clicked" cmd="startProgram" data="cmd /C copy xxx.icwp blimblim.txt"/>
+                  </button>
+                  <button define="DIRECTORYBUTTON" label="Directory">
+                    <action event="clicked" cmd="startProgram" data="cmd /C dir"/>
+                  </button>
+                  <button define="YATBUTTON" label="yat">
+                    <action event="clicked" cmd="startProgram" data="E:\YAT\YAT"/>
+                  </button>
+                  <button define="DUMPBUTTON" label="Dump">
+                    <action event="clicked" cmd="runScript" data="DumpObjects();Version()"/>
+                  </button>
+                  <button define="SHOWBUTTON" label="Show">
+                    <action event="clicked" cmd="runScript" data="ShowConsole(1)"/>
+                  </button>
+                  <button define="HIDEBUTTON" label="Hide">
+                    <action event="clicked" cmd="runScript" data="ShowConsole(0)"/>
+                  </button>
+                  <togglebutton define="BLINKTOGGLEBUTTON" label="Blinkbutton"/>
+                </horizontalcontainer>
+                <checkbox define="CHECKBOX.LOCK" label="Lock" lockon="ICONTOGGLEBUTTON=0"/>
+                <button define="ICONBUTTON" icon="On.png"/>
+                <togglebutton define="ICONTOGGLEBUTTON" icon="Off.png" nograyout="1"/>
+            </verticalcontainer>
+        </groupcontainer>
+    </verticalcontainer>
+</ifxmlcfg>

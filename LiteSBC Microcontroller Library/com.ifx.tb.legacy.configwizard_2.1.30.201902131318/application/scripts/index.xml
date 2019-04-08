@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ifxmlcfg version="2.0.4">
+	<checksum>a8828863617a5bbc2a6a0dd07ad33cc2027400211d9d04e83e6a5905b3f641f1</checksum>
+	<version label="V0.0.4"/>	
+	<horizontalcontainer image=":/images/backgroundNew.png" label="System Basis Chips">
+		<gridcontainer sizepolicy="fixed;fixed" columns="4" color="00;00;00;00">
+			<button icon="index/iconTLE94x1.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="ICW_TLE94x1.xml"/>
+			</button>
+			<button icon="index/iconTLE9263.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="ICW_TLE9263.xml"/>
+			</button>
+			<button icon="index/iconTLE9273.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="ICW_TLE9273.xml"/>
+			</button>
+			<button icon="index/iconTLE9278.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="ICW_TLE9278.xml"/>
+			</button>
+			<button icon="index/iconTLE94x1RV.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="ICW_TLE94x1RV.xml"/>
+			</button>
+			<button icon="index/iconTLE9263RV.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="ICW_TLE9263RV.xml"/>
+			</button>
+			<button icon="index/iconTLE9273RV.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="ICW_TLE9273RV.xml"/>
+			</button>
+			<button icon="index/iconTLE9278RV.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="ICW_TLE9278RV.xml"/>
+			</button>
+			<button icon="index/iconTLE94x1_Lib.png" size="120;120">
+				<action event="clicked" cmd="loadFile" data="TLE94x1_Lib.xml"/>
+			</button>
+		</gridcontainer>
+	</horizontalcontainer>
+</ifxmlcfg>
