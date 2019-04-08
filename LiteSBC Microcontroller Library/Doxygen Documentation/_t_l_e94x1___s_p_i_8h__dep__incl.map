@@ -1,0 +1,6 @@
+<map id="src/TLE94x1_SPI.h" name="src/TLE94x1_SPI.h">
+<area shape="rect" id="node1" title="Declaration file for TLE94x1 SBC family device SPI functions." alt="" coords="63,5,198,32"/>
+<area shape="rect" id="node2" href="$_t_l_e94x1_8h.html" title="Main header declaration file for TLE94x1 SBC family device." alt="" coords="5,80,112,107"/>
+<area shape="rect" id="node4" href="$_t_l_e94x1___s_p_i_8c.html" title="Implementation of all SPI related functions." alt="" coords="137,80,271,107"/>
+<area shape="rect" id="node3" href="$_t_l_e94x1_8c.html" title="Implementation of main library functions." alt="" coords="5,155,112,181"/>
+</map>

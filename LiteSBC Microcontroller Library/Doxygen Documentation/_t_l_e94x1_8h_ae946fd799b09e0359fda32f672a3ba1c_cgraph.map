@@ -1,0 +1,4 @@
+<map id="SBC_Read_Command" name="SBC_Read_Command">
+<area shape="rect" id="node1" title="This method will proceed a readout of a register." alt="" coords="5,5,157,32"/>
+<area shape="rect" id="node2" href="$_t_l_e94x1___s_p_i_8c.html#a9e2a80cc77844819a1ad32745cd7d99b" title="IMPORTANT! THIS METHOD HAS TO BE DEFINED BY THE USER." alt="" coords="205,5,372,32"/>
+</map>

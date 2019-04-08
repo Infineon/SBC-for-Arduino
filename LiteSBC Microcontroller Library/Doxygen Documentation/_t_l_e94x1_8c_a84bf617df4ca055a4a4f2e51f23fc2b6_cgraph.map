@@ -1,0 +1,5 @@
+<map id="SBC_Write_RegField" name="SBC_Write_RegField">
+<area shape="rect" id="node1" title="This method can be used for manipulating a single bit&#45;field in a control&#45;register." alt="" coords="5,31,151,57"/>
+<area shape="rect" id="node2" href="$_t_l_e94x1_8c.html#ae946fd799b09e0359fda32f672a3ba1c" title="This method will proceed a readout of a register." alt="" coords="199,5,351,32"/>
+<area shape="rect" id="node3" href="$_t_l_e94x1___s_p_i_8c.html#a9e2a80cc77844819a1ad32745cd7d99b" title="IMPORTANT! THIS METHOD HAS TO BE DEFINED BY THE USER." alt="" coords="399,31,565,57"/>
+</map>
