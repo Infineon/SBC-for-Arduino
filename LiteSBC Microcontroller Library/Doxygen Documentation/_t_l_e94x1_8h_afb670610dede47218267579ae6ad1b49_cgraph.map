@@ -1,5 +1,0 @@
-<map id="SBC_Mode_Sleep" name="SBC_Mode_Sleep">
-<area shape="rect" id="node1" title="Clears all wake status registers and enter SBC sleep mode. Depending on configuration also the select..." alt="" coords="5,5,133,32"/>
-<area shape="rect" id="node2" href="$_t_l_e94x1_8c.html#ae946fd799b09e0359fda32f672a3ba1c" title="This method will proceed a readout of a register." alt="" coords="181,5,333,32"/>
-<area shape="rect" id="node3" href="$_t_l_e94x1___s_p_i_8c.html#a9e2a80cc77844819a1ad32745cd7d99b" title="IMPORTANT! THIS METHOD HAS TO BE DEFINED BY THE USER." alt="" coords="381,5,548,32"/>
-</map>

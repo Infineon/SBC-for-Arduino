@@ -32,7 +32,8 @@ Two code examples for the shield are offered
 * CAN-PN demonstration
 * General code example to demonstrate CAN communication, Control of LEDs, SW output and the WK input
 
-A more detailled description can be found in the [User Manual](https://github.com/Infineon/SBC-for-Arduino/raw/master/LiteSBC_Arduino_Shield_UserManual.pdf)
+A more detailled description can be found in the [Shield User Manual](https://github.com/Infineon/SBC-for-Arduino/raw/master/LiteSBC_Arduino_Shield_UserManual.pdf)
+All code exmaples are based on the [Lite SBC Microcontroller Library](https://github.com/Infineon/SBC-for-Arduino/raw/master/LiteSBC_Library_UserManual.pdf)
 
 ## Thermal Behaviour
 The picture shows the shield with an external load of 2.5 amps. The power mosfets on the board heat up to approx. 60 degrees at ambient temperature.

@@ -1,6 +1,0 @@
-<map id="SBC_Lock_Configuration" name="SBC_Lock_Configuration">
-<area shape="rect" id="node1" title="Locks CP_EN, GPIO configuration and &#39;rwl&#39;&#45;bits." alt="" coords="5,31,172,57"/>
-<area shape="rect" id="node2" href="$_t_l_e94x1_8c.html#a84bf617df4ca055a4a4f2e51f23fc2b6" title="This method can be used for manipulating a single bit&#45;field in a control&#45;register." alt="" coords="220,31,365,57"/>
-<area shape="rect" id="node3" href="$_t_l_e94x1_8c.html#ae946fd799b09e0359fda32f672a3ba1c" title="This method will proceed a readout of a register." alt="" coords="413,5,565,32"/>
-<area shape="rect" id="node4" href="$_t_l_e94x1___s_p_i_8c.html#a9e2a80cc77844819a1ad32745cd7d99b" title="IMPORTANT! THIS METHOD HAS TO BE DEFINED BY THE USER." alt="" coords="613,31,780,57"/>
-</map>

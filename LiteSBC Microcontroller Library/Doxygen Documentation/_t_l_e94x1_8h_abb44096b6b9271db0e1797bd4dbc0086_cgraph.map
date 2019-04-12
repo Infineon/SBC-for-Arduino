@@ -1,5 +1,0 @@
-<map id="SBC_Write_Reg" name="SBC_Write_Reg">
-<area shape="rect" id="node1" title="Writes a whole byte to a register and verifies it." alt="" coords="5,5,123,32"/>
-<area shape="rect" id="node2" href="$_t_l_e94x1___s_p_i_8c.html#a9e2a80cc77844819a1ad32745cd7d99b" title="IMPORTANT! THIS METHOD HAS TO BE DEFINED BY THE USER." alt="" coords="371,5,537,32"/>
-<area shape="rect" id="node3" href="$_t_l_e94x1_8c.html#ae946fd799b09e0359fda32f672a3ba1c" title="This method will proceed a readout of a register." alt="" coords="171,31,323,57"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="SBC_SYS_STAT_Read" name="SBC_SYS_STAT_Read">
-<area shape="rect" id="node1" title="Reads System Status Control, both lower and higher bits. See page 138 in datasheet." alt="" coords="5,5,164,32"/>
-<area shape="rect" id="node2" href="$_t_l_e94x1_8c.html#ae946fd799b09e0359fda32f672a3ba1c" title="This method will proceed a readout of a register." alt="" coords="212,5,364,32"/>
-<area shape="rect" id="node3" href="$_t_l_e94x1___s_p_i_8c.html#a9e2a80cc77844819a1ad32745cd7d99b" title="IMPORTANT! THIS METHOD HAS TO BE DEFINED BY THE USER." alt="" coords="412,5,579,32"/>
-</map>

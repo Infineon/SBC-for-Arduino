@@ -1,7 +1,0 @@
-<map id="src/TLE94x1.h" name="src/TLE94x1.h">
-<area shape="rect" id="node1" title="Main header declaration file for TLE94x1 SBC family device." alt="" coords="140,5,247,32"/>
-<area shape="rect" id="node2" href="$_t_l_e94x1___d_e_f_i_n_e_s_8h.html" title="Main header declaration file for TLE94x1 SBC family device." alt="" coords="5,155,152,181"/>
-<area shape="rect" id="node3" href="$_t_l_e94x1___i_s_r_8h.html" title="Declaration file for ISR&#45;Vectors and ISR related functions." alt="" coords="69,80,181,107"/>
-<area shape="rect" id="node4" href="$_t_l_e94x1___s_p_i_8h.html" title="Declaration file for TLE94x1 SBC family device SPI functions." alt="" coords="205,80,317,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="275,155,341,181"/>
-</map>
