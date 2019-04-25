@@ -50,7 +50,7 @@
 /* ================================================================================ */
 
 #include "TLE94x1.h"
-#include "SBC_TLE94x1.h"
+#include "util/SBC_TLE94x1.h"
 #include <stdio.h>
 
 

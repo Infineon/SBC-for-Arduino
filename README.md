@@ -1,7 +1,10 @@
 # SBC-for-Arduino
-For more details please read our [User Manual](https://github.com/Infineon/SBC-for-Arduino/raw/master/LiteSBC_Arduino_Shield_UserManual.pdf)
 
-<img src="https://github.com/Infineon/SBC-for-Arduino/blob/master/ReadMe%20Documents/Shield_top-view.jpg?raw=true" width=600>
+[![Build Status](https://travis-ci.org/Infineon/SBC-for-Arduino.svg?branch=master)](https://travis-ci.org/Infineon/SBC-for-Arduino)
+
+For more details please read our [User Manual](https://github.com/Infineon/SBC-for-Arduino/raw/master/Documents/docs/LiteSBC_Arduino_Shield_UserManual.pdf)
+
+<img src="https://github.com/Infineon/SBC-for-Arduino/blob/master/Documents/images/Shield_top-view.jpg?raw=true" width=600>
 
 The **Lite DCDC System Basis Chip Shield with TLE9471-3ES for Arduino** is based the new [Infineon Lite SBC](https://www.infineon.com/cms/de/product/automotive-system-ic/system-basis-chips-sbc/lite-sbc-family/).
 The device is designed for various CAN automotive applications as main supply for the microcontroller and as interface for a CAN bus network including the CAN Partial Networking feature. 
@@ -25,19 +28,26 @@ A wake-up from the low-power mode is possible via a message on the buses, via th
 The WK input has an ESD protection and also a passive pull-down. The easiest way to connect a switch is a switchable connection to the positive input supply rail. But also any signal with a logic high level of over 4 volts can be applied here. 
 The SW output can drive directly a connected load (e.g. light-bulbs, small motors, etc). The load must be externally connected to GND. The GNDs of the other CAN communication nodes and the GND of the shield should be connected together.
 
-<img src="https://github.com/Infineon/SBC-for-Arduino/blob/master/ReadMe%20Documents/overview.png?raw=true" width=600>
+<img src="https://github.com/Infineon/SBC-for-Arduino/blob/master/Documents/images/overview.png?raw=true" width=600>
 
 ## Arduino Code Examples
 Two code examples for the shield are offered
 * CAN-PN demonstration
 * General code example to demonstrate CAN communication, Control of LEDs, SW output and the WK input
 
-A more detailled description can be found in the [Shield User Manual](https://github.com/Infineon/SBC-for-Arduino/raw/master/LiteSBC_Arduino_Shield_UserManual.pdf).
+A more detailled description can be found in the [Shield User Manual](https://github.com/Infineon/SBC-for-Arduino/raw/master/Documents/docs/LiteSBC_Arduino_Shield_UserManual.pdf).
 
-All code examples are based on the [Lite SBC Microcontroller Library](https://github.com/Infineon/SBC-for-Arduino/raw/master/LiteSBC_Library_UserManual.pdf).
+All code examples are based on the [Lite SBC Microcontroller Library](https://github.com/Infineon/SBC-for-Arduino/raw/master/Documents/docs/LiteSBC_Library_UserManual.pdf).
 
 ## Thermal Behaviour
 The picture shows the shield with an external load of 2.5 amps. The power mosfets on the board heat up to approx. 60 degrees at ambient temperature.
 
-![alt text](https://github.com/Infineon/SBC-for-Arduino/blob/master/ReadMe%20Documents/thermal_2_5_amps.jpg?raw=true "Thermal Behaviour Switched Power 2.5 Amps")
+![alt text](https://github.com/Infineon/SBC-for-Arduino/blob/master/Documents/images/thermal_2_5_amps.jpg?raw=true "Thermal Behaviour Switched Power 2.5 Amps")
+
+## Dependencies
+SBC for Arduino uses the Afaruit NeoPixel Library and MCP2515 Library for Arduino.
+
+To download Adafruit NeoPixel Library , please click this [link] (https://github.com/adafruit/Adafruit_NeoPixel/archive/master.zip)
+
+To downnload MCP2515 Library for Arduino , please click this [link] (https://github.com/autowp/arduino-mcp2515/archive/master.zip)
 

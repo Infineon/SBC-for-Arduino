@@ -60,9 +60,9 @@
 
 
  
-#include "TLE94x1_DEFINES.h"
-#include "TLE94x1_ISR.h"
-#include "TLE94x1_SPI.h"
+#include "util/TLE94x1_DEFINES.h"
+#include "util/TLE94x1_ISR.h"
+#include "util/TLE94x1_SPI.h"
 #include <stdint.h>
 
 

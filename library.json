@@ -1,0 +1,13 @@
+{
+  "name": "Lite System Basis Chip Shield",
+  "keywords": "System Basis Chip,CAN Bus,Neopixel for XMC,shield2go ",
+  "description": "library of Infineon's  Lite DCDC System Basis Chip Shield with TLE9471-3ES",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Infineon/SBC-for-Arduino.git"
+  },
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": "infineonxmc"
+}
