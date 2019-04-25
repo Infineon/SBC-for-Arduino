@@ -47,7 +47,7 @@ The picture shows the shield with an external load of 2.5 amps. The power mosfet
 ## Dependencies
 SBC for Arduino uses the Afaruit NeoPixel Library and MCP2515 Library for Arduino.
 
-To download Adafruit NeoPixel Library , please click this [link] (https://github.com/adafruit/Adafruit_NeoPixel/archive/master.zip)
+To download Adafruit NeoPixel Library , please click this [link](https://github.com/adafruit/Adafruit_NeoPixel/archive/master.zip)
 
-To downnload MCP2515 Library for Arduino , please click this [link] (https://github.com/autowp/arduino-mcp2515/archive/master.zip)
+To download MCP2515 Library for Arduino , please click this [link](https://github.com/autowp/arduino-mcp2515/archive/master.zip)
 
