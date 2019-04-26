@@ -1,6 +1,6 @@
 # SBC-for-Arduino
 
-[![Build Status](https://travis-ci.org/Infineon/SBC-for-Arduino.svg?branch=master)](https://travis-ci.org/Infineon/SBC-for-Arduino)
+[![Build Status](https://travis-ci.org/Infineon/SBC-for-Arduino.svg?branch=develop)](https://travis-ci.org/Infineon/SBC-for-Arduino)
 
 For more details please read our [User Manual](https://github.com/Infineon/SBC-for-Arduino/raw/master/Documents/docs/LiteSBC_Arduino_Shield_UserManual.pdf)
 
