@@ -37,8 +37,8 @@
  *
  * @brief        Implementation of main library functions
  *
- * @version     V1.0.0
- * @date        15. April 2019
+ * @version     V1.0.1
+ * @date        05. October 2020
  * @author      Markus Noll / markus.noll@infineon.com
  * @author      Yannek Micha Rixen / Yannek.Rixen@infineon.com
  ********************************************************************************************************/
